@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Inside the GTA VI Leak | Cybersecurity Case Study</title>
+<!--
+HOW TO EDIT: every slide is one <section class="slide"> ... </section>. Copy, delete or reorder whole sections freely.
+ data-p = presenter label | data-t = enter transition (wipe, zoom, flip, glitch) | data-h = background colour (0-360)
+ Anything with class "b" appears one at a time on the RIGHT arrow (data-fx = zoom, left, stamp). LEFT arrow undoes it.
+ UP / DOWN arrows (or scroll / swipe) change slides.
+-->
+<style>
+:root{--bg:#05070d;--c:#3df2e0;--p:#ff3d81;--y:#ffe14d;--m:#9fb0c8;--d:1}
+*{box-sizing:border-box;margin:0}
+html,body{height:100%;overflow:hidden;background:var(--bg);color:#fff;font:clamp(15px,1.5vw,21px)/1.5 ui-sans-serif,system-ui,"Segoe UI",sans-serif}
+#r{position:fixed;inset:0;opacity:.35}
+body:before{content:"";position:fixed;inset:0;z-index:1;pointer-events:none;background:radial-gradient(circle 28vmax at var(--mx,50%) var(--my,50%),#3df2e022,transparent)}
+body:after{content:"";position:fixed;inset:0;z-index:9;pointer-events:none;background:repeating-linear-gradient(0deg,#0000 0 3px,#0003 3px 4px)}
+.shake{animation:sh .5s}@keyframes sh{20%{transform:translate(-12px,6px)}40%{transform:translate(10px,-8px)}60%{transform:translate(-8px,-4px)}80%{transform:translate(6px,6px)}}
+.deck{position:fixed;inset:0;perspective:1400px;z-index:2}
+.slide{position:absolute;inset:0;padding:8vh 9vw 11vh;display:flex;flex-direction:column;justify-content:center;gap:2.2vh;visibility:hidden}
+.slide:after{content:attr(data-p);position:absolute;right:5vw;bottom:9vh;font:700 11px ui-monospace,Consolas,monospace;color:var(--m)}
+.act{visibility:visible;animation:wipe .9s cubic-bezier(.2,.8,.2,1) both}
+[data-t=zoom].act{animation-name:zoom}[data-t=flip].act{animation-name:flip}[data-t=glitch].act{animation-name:glt;animation-timing-function:steps(9)}
+.out{visibility:visible;pointer-events:none;animation:out .6s ease both}
+@keyframes wipe{from{clip-path:inset(calc(50% + var(--d)*50%) 0 calc(50% - var(--d)*50%) 0);transform:translateY(calc(var(--d)*12vh))}to{clip-path:inset(0);transform:none}}
+@keyframes zoom{from{transform:scale(1.6);filter:blur(16px);opacity:0}to{transform:none;filter:none;opacity:1}}
+@keyframes flip{from{transform:rotateX(calc(var(--d)*-80deg)) translateY(calc(var(--d)*20vh));opacity:0}to{transform:none;opacity:1}}
+@keyframes glt{0%{opacity:0;transform:translateX(-7%) skewX(20deg);filter:hue-rotate(90deg)}30%{opacity:1;transform:translateX(5%) skewX(-12deg)}60%{transform:translateX(-3%);filter:hue-rotate(-60deg)}100%{transform:none;filter:none}}
+@keyframes out{to{transform:translateY(calc(var(--d)*-14vh)) scale(.9) rotateX(calc(var(--d)*25deg));opacity:0;filter:blur(8px)}}
+#gl{position:fixed;inset:0;z-index:8;pointer-events:none;opacity:0;background:repeating-linear-gradient(0deg,#ff3d8190 0 5px,#0000 5px 13px,#3df2e070 13px 17px,#0000 17px 30px)}
+#gl.on{animation:gl .5s steps(6)}@keyframes gl{0%{opacity:1;transform:translateX(-3%) skewX(8deg)}50%{opacity:.5;transform:translateX(3%)}100%{opacity:0}}
+.b{opacity:0;transform:translateY(30px);transition:opacity .6s,transform .7s cubic-bezier(.2,.9,.3,1.2)}
+[data-fx=zoom]{transform:scale(.5)}[data-fx=left]{transform:translateX(-70px)}[data-fx=stamp]{transform:scale(3.5) rotate(-20deg)}
+.b.on{opacity:1;transform:none}.b.on[data-fx=stamp]{transform:rotate(-8deg)}
+h1{font-size:clamp(44px,8vw,112px);line-height:.92;letter-spacing:-.05em}
+h2{font-size:clamp(30px,4.6vw,66px);line-height:1;letter-spacing:-.04em}
+.eb{color:var(--c);font:700 13px ui-monospace,Consolas,monospace}
+em{position:relative;color:var(--c);font-style:normal}
+em:before,em:after{content:attr(data-x);position:absolute;left:0;top:0;clip-path:inset(0 0 50% 0);animation:gj 2.5s infinite steps(2)}
+em:before{color:var(--p);transform:translateX(-3px)}em:after{color:var(--y);clip-path:inset(50% 0 0 0);transform:translateX(3px);animation-delay:-1s}
+@keyframes gj{0%,90%{transform:translateX(0)}92%{transform:translateX(-6px)}96%{transform:translateX(6px)}}
+p,li{color:var(--m)}b{color:#fff}
+.g{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:16px}
+.card{border:1px solid #ffffff1f;background:#0d1422e6;border-radius:6px 22px 6px 22px;padding:20px}
+.card h3{margin-bottom:6px;font-size:1.1em}.card p{font-size:.85em}
+.num{font-size:clamp(40px,6vw,84px);font-weight:900;color:var(--c);line-height:1;letter-spacing:-.05em}
+.term{font:clamp(14px,1.6vw,22px)/1.6 ui-monospace,Consolas,monospace;color:var(--c);background:#000a;border:1px solid var(--c);padding:16px 20px;white-space:pre-wrap;min-height:6em}
+.call{border-left:4px solid var(--p);background:#ff3d810f;padding:12px 18px;color:#e8ecf4;font-size:.9em}
+.tl{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;border-top:3px solid var(--c);margin-top:3vh}
+.tl .b{position:relative;padding-top:18px}.tl .b:before{content:"";position:absolute;top:-12px;left:0;width:20px;height:20px;border-radius:50%;background:var(--p);box-shadow:0 0 20px var(--p)}
+.tl b{color:var(--y)}
+.chat{max-width:560px;display:flex;flex-direction:column;gap:12px}
+.msg{background:#1b2a44;padding:12px 18px;border-radius:20px 20px 20px 4px;color:#fff;width:fit-content}
+.st{display:grid;gap:4px}.st span{color:var(--m);font-size:.85em}.st i{display:block;height:7px;border-radius:9px;width:0;background:linear-gradient(90deg,var(--c),var(--p));transition:width 1.3s .3s}.st.on i{width:100%}
+.stamp{font-size:clamp(56px,11vw,160px);font-weight:900;color:var(--p);border:.06em solid var(--p);padding:0 .2em;display:inline-block;width:fit-content;line-height:1.1}
+.q button{display:block;width:100%;max-width:640px;text-align:left;margin:6px 0;padding:14px 18px;font:inherit;color:#fff;background:#0d1422;border:1px solid #ffffff33;border-radius:12px;cursor:pointer}
+.q button:hover{border-color:var(--c)}.q .ok{background:#1d5c3a;border-color:#6dff9c}.q .bad{animation:sh .4s;border-color:var(--p)}
+.win{font-size:clamp(40px,8vw,120px);font-weight:900;letter-spacing:-.05em;line-height:.95;background:linear-gradient(90deg,var(--y),var(--p),var(--c),var(--y));background-size:300%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:bg 4s linear infinite}
+@keyframes bg{to{background-position:300%}}
+a{color:var(--c)}
+#rec{position:fixed;z-index:10;left:3vw;top:3vh;font:700 13px ui-monospace,Consolas,monospace;display:flex;gap:8px;align-items:center}
+#rec:before{content:"";width:12px;height:12px;border-radius:50%;background:red;animation:bl 1s infinite}@keyframes bl{50%{opacity:0}}
+#ui{position:fixed;z-index:10;left:0;right:0;bottom:0;padding:12px 3vw;display:flex;gap:16px;align-items:center;font:12px ui-monospace,Consolas,monospace;color:var(--m)}
+#pb{flex:1;height:3px;background:#fff2}#pb i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--c),var(--p));transition:width .5s}
+#dots{position:fixed;z-index:10;right:1.4vw;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:9px}
+#dots i{width:9px;height:9px;border-radius:50%;background:#fff3;cursor:pointer;transition:.3s}#dots i.on{background:var(--c);transform:scale(1.7);box-shadow:0 0 12px var(--c)}
+@media(max-width:760px){.tl{grid-template-columns:1fr 1fr}#dots,#ui span:last-child{display:none}}
+@media(prefers-reduced-motion:reduce){*{animation-duration:.01s!important;transition-duration:.01s!important}}
+</style></head><body>
+<canvas id="r"></canvas><div id="gl"></div>
+<div id="rec">REC <span id="tc">00:00:00</span></div>
+<main class="deck">
+
+<!-- 1 TITLE -->
+<section class="slide" data-t="glitch" data-h="170" data-p="Both presenters">
+<p class="eb">CYBERSECURITY CASE FILE 路 SEPTEMBER 2022</p>
+<h1>INSIDE THE<br><em data-x="GTA VI">GTA VI</em> LEAK</h1>
+<pre class="b term" data-type="> connecting to rockstar_network...|> ACCESS GRANTED|> copying 90 confidential videos_"></pre>
+<p class="b">Presented by <b>[Arshad Ali]</b> &amp; <b>[Member 2]</b></p>
+</section>
+
+<!-- 2 WHAT HAPPENED -->
+<section class="slide" data-t="wipe" data-h="330" data-p="Presenter 1">
+<p class="eb">MISSION 1 路 WHAT HAPPENED?</p>
+<h2>A secret game, leaked online.</h2>
+<div class="g">
+<div class="card b" data-fx="zoom"><div class="num" data-n="90">0</div><p>videos posted online</p></div>
+<div class="card b" data-fx="zoom"><div class="num" data-n="50">0</div><p>minutes of unfinished gameplay</p></div>
+<div class="card b" data-fx="zoom"><div class="num" data-n="1">0</div><p>day until Rockstar confirmed the break-in</p></div></div>
+<p class="call b">It was an early, unfinished build, not the final game. But it was a real theft of company secrets.</p>
+</section>
+
+<!-- 3 TIMELINE + DURATION -->
+<section class="slide" data-t="flip" data-h="50" data-p="Presenter 1">
+<p class="eb">MISSION 2 路 TIMELINE &amp; DURATION</p>
+<h2>From break-in to courtroom.</h2>
+<div class="tl">
+<div class="b"><b>Before 18 Sep 2022</b><p>Intruder gets inside. The exact path was never fully made public.</p></div>
+<div class="b"><b>18 Sep 2022</b><p>Videos appear on a GTA fan forum and spread in hours.</p></div>
+<div class="b"><b>19 Sep 2022</b><p>Rockstar confirms a network intrusion.</p></div>
+<div class="b"><b>2023</b><p>A UK court finds the teenage hacker responsible.</p></div></div>
+<p class="call b">Leak spread: hours. Legal case: about a year. No one has published a minute-by-minute record of the break-in.</p>
+</section>
+
+<!-- 4 INITIAL ACCESS -->
+<section class="slide" data-t="zoom" data-h="200" data-p="Presenter 1">
+<p class="eb">MISSION 3 路 INITIAL ACCESS</p>
+<h2>How did they get in?</h2>
+<p class="b">Reports point to <b>social engineering</b> and a <b>work chat account</b>. Rockstar has not confirmed the details.</p>
+<div class="chat">
+<div class="msg b" data-fx="left">Hi! IT support here. We're fixing your account.</div>
+<div class="msg b" data-fx="left">Please approve the login request on your phone.</div>
+<div class="msg b" data-fx="left">It's urgent, thanks! 馃檹</div></div>
+<p class="call b">Illustration only, not the real messages. Hackers fake urgency so you act before you think.</p>
+</section>
+
+<!-- 5 EXPLOITATION -->
+<section class="slide" data-t="glitch" data-h="300" data-p="Presenter 1">
+<p class="eb">MISSION 4 路 EXPLOITATION</p>
+<h2>The attack, step by step.</h2>
+<div class="g">
+<div class="card b st"><b>1 路 Get in</b><span>Use one person's account to enter.</span><i></i></div>
+<div class="card b st"><b>2 路 Look around</b><span>Find folders with secret game files.</span><i></i></div>
+<div class="card b st"><b>3 路 Copy data</b><span>Download videos. This is called exfiltration.</span><i></i></div>
+<div class="card b st"><b>4 路 Leak and pressure</b><span>Post it publicly and demand attention (or money).</span><i></i></div></div>
+<p class="call b">A model of the reported events, not a confirmed forensic report.</p>
+</section>
+
+<!-- 6 WHO -->
+<section class="slide" data-t="wipe" data-h="260" data-p="Presenter 2">
+<p class="eb">MISSION 5 路 WHO DID IT?</p>
+<h2>A teenager, not a movie villain.</h2>
+<div class="g">
+<div class="card b"><h3>Arion Kurtaj</h3><p>A teenager from the UK. A court found him responsible for the Rockstar attack in 2023.</p></div>
+<div class="card b"><h3>Lapsus$</h3><p>A young, loud hacking group known for stealing data from big tech companies.</p></div>
+<div class="card b"><h3>"teapotuberhacker"</h3><p>The online name that posted the leak. It also claimed the Uber hack the same week.</p></div></div>
+<p class="call b">Online claims are not proof. Always check what courts and companies confirm.</p>
+</section>
+
+<!-- 7 MOTIVATION -->
+<section class="slide" data-t="zoom" data-h="30" data-p="Presenter 2">
+<p class="eb">MISSION 6 路 MOTIVATION</p>
+<h2>Why hack a video game?</h2>
+<div class="g">
+<div class="card b" data-fx="zoom"><h3>馃捀 Money</h3><p>Stolen data can be used as leverage to demand payment (extortion).</p></div>
+<div class="card b" data-fx="zoom"><h3>馃摚 Fame</h3><p>A famous leak brings worldwide attention to the hacker.</p></div>
+<div class="card b" data-fx="zoom"><h3>馃棟锔?Secrets</h3><p>Unreleased footage and plans are valuable to rivals and fans.</p></div></div>
+<h2 class="b" style="font-size:clamp(22px,3vw,40px)">You don't need a bank to have data worth stealing.</h2>
+</section>
+
+<!-- 8 IMPACT -->
+<section class="slide" data-t="flip" data-h="350" data-sp="3" data-p="Presenter 2">
+<p class="eb">MISSION 7 路 IMPACT</p>
+<div class="b stamp" data-fx="stamp">LEAKED</div>
+<div class="g">
+<div class="card b"><h3>馃懇鈥嶐煉?Developers</h3><p>Affected most: years of private work shown before it was ready.</p></div>
+<div class="card b"><h3>馃彚 Rockstar &amp; Take-Two</h3><p>Had to investigate, contain access and remove copies.</p></div>
+<div class="card b"><h3>馃幃 Fans</h3><p>Saw spoilers and unfinished work out of context.</p></div></div>
+<p class="call b">Rockstar said it did not expect long-term delays. The damage was to trust and privacy.</p>
+</section>
+
+<!-- 9 DETECTION AND DEFENCE -->
+<section class="slide" data-t="wipe" data-h="150" data-p="Presenter 2">
+<p class="eb">MISSION 8 路 DETECTION &amp; DEFENCE</p>
+<h2>How to stop the next one.</h2>
+<div class="g">
+<div class="card b"><h3>馃攼 Strong MFA</h3><p>Never approve a login you did not start.</p></div>
+<div class="card b"><h3>馃毆 Least access</h3><p>People only see files they need.</p></div>
+<div class="card b"><h3>馃憖 Watch alerts</h3><p>Flag huge or unusual downloads fast.</p></div>
+<div class="card b"><h3>馃帗 Train staff</h3><p>Verify urgent requests on another channel.</p></div></div>
+<p class="call b">Rockstar's response: contain, investigate, remove leaked copies.</p>
+</section>
+
+<!-- 10 QUIZ -->
+<section class="slide" data-t="glitch" data-h="60" data-p="Both presenters">
+<p class="eb">BONUS MISSION 路 YOUR TURN</p>
+<h2>Would you fall for it?</h2>
+<p>A message from "IT" says: <b>"Approve this login on your phone. It's urgent!"</b> You did not log in. What do you do?</p>
+<div class="b q"><button>A. Approve it fast, it sounds urgent</button><button data-a="1">B. Deny it, then verify with IT on a trusted channel</button><button>C. Forward it to a friend and wait</button><p id="qf"></p></div>
+</section>
+
+<!-- 11 END -->
+<section class="slide" data-t="zoom" data-h="170" data-p="Both presenters">
+<div class="win b" data-fx="zoom">MISSION<br>PASSED</div>
+<div class="g">
+<div class="card b"><h3>People are security</h3><p>One account can open the door.</p></div>
+<div class="card b"><h3>Limit access</h3><p>Powerful tools need strong locks.</p></div>
+<div class="card b"><h3>Respond fast</h3><p>Contain, investigate, learn.</p></div></div>
+<p class="b">Thank you! Questions? 路 Sources: <a href="https://www.theguardian.com/games/2022/sep/19/grand-theft-auto-6-leak-who-hacked-rockstar-and-what-was-stolen" target="_blank">The Guardian</a> 路 <a href="https://www.sec.gov/Archives/edgar/data/946581/000162828023002448/ttwo-20221231.htm" target="_blank">Take-Two SEC filing</a></p>
+</section>
+
+</main>
+<div id="dots"></div>
+<div id="ui"><span id="ct">1/11</span><div id="pb"><i></i></div><span id="st"></span><span>鈫戔啌 slides 路 鈫愨啋 animations 路 F fullscreen</span></div>
+<script>
+const $=s=>document.querySelector(s),S=[...document.querySelectorAll('.slide')],B=document.body;
+let i=-1,lock=0,hue=170,th=170,sp=1;
+S.forEach((s,k)=>{s.bs=[...s.querySelectorAll('.b')];s.n=0;$('#dots').innerHTML+=`<i data-k=${k}></i>`});
+$('#dots').onclick=e=>e.target.dataset.k&&go(+e.target.dataset.k);
+function count(e){const t=+e.dataset.n,s=performance.now();(function f(n){const p=Math.min(1,(n-s)/1200);e.textContent=Math.round(t*p);p<1&&requestAnimationFrame(f)})(s)}
+function type(b){const t=b.dataset.type.replace(/\|/g,'\n');let k=0;b.textContent='';(function f(){b.textContent=t.slice(0,++k);k<t.length&&setTimeout(f,35)})()}
+function fx(b){const n=b.querySelector('[data-n]');n&&count(n);b.dataset.type&&type(b);if(b.dataset.fx=='stamp'){B.classList.add('shake');setTimeout(()=>B.classList.remove('shake'),500)}}
+function go(k,dir){if(k<0||k>=S.length||k==i||lock)return;lock=1;setTimeout(()=>lock=0,700);dir=dir||(k>i?1:-1);B.style.setProperty('--d',dir);
+const o=S[i],n=S[k];if(o){o.classList.remove('act');o.classList.add('out');setTimeout(()=>o.classList.remove('out'),650)}
+i=k;n.n=dir<0?n.bs.length:0;n.bs.forEach(b=>{b.classList.toggle('on',dir<0)});n.classList.add('act');
+$('#gl').classList.remove('on');void $('#gl').offsetWidth;$('#gl').classList.add('on');th=+n.dataset.h;sp=+n.dataset.sp||1;
+if(dir<0)n.bs.forEach(fx);upd()}
+function step(d){const s=S[i];if(d>0&&s.n<s.bs.length){const b=s.bs[s.n++];b.classList.add('on');fx(b)}else if(d<0&&s.n>0)s.bs[--s.n].classList.remove('on');upd()}
+function upd(){const s=S[i];$('#ct').textContent=(i+1)+'/'+S.length;$('#pb i').style.width=(i+1)/S.length*100+'%';$('#st').textContent='鈼?.repeat(s.n)+'鈼?.repeat(s.bs.length-s.n);[...$('#dots').children].forEach((d,k)=>d.classList.toggle('on',k==i))}
+addEventListener('keydown',e=>{const k=e.key;if(k=='ArrowDown'||k=='PageDown'){e.preventDefault();go(i+1)}else if(k=='ArrowUp'||k=='PageUp'){e.preventDefault();go(i-1)}else if(k=='ArrowRight'||k==' '){e.preventDefault();step(1)}else if(k=='ArrowLeft'){e.preventDefault();step(-1)}else if(k=='Home')go(0);else if(k=='End')go(S.length-1);else if(k=='f'||k=='F')document.fullscreenElement?document.exitFullscreen():document.documentElement.requestFullscreen()});
+addEventListener('wheel',e=>go(i+(e.deltaY>0?1:-1)),{passive:true});
+let tx,ty;addEventListener('touchstart',e=>{tx=e.touches[0].clientX;ty=e.touches[0].clientY},{passive:true});
+addEventListener('touchend',e=>{const x=e.changedTouches[0].clientX-tx,y=e.changedTouches[0].clientY-ty;if(Math.abs(y)>Math.abs(x)&&Math.abs(y)>50)go(i+(y<0?1:-1));else if(Math.abs(x)>50)step(x<0?1:-1)},{passive:true});
+addEventListener('mousemove',e=>{B.style.setProperty('--mx',e.clientX+'px');B.style.setProperty('--my',e.clientY+'px')});
+document.querySelectorAll('.q button').forEach(x=>x.onclick=()=>{const ok=x.dataset.a;x.className=ok?'ok':'bad';$('#qf').textContent=ok?'Correct! Urgency is a trick. Pause and verify.':'Not quite. Hackers rely on you rushing.';$('#qf').style.color=ok?'#6dff9c':'#ff3d81'});
+const c=$('#r'),x=c.getContext('2d');let W,H,y=[];function rs(){W=c.width=innerWidth;H=c.height=innerHeight;y=Array(Math.ceil(W/18)).fill(0).map(()=>Math.random()*H/18)}rs();onresize=rs;
+(function dr(){hue+=(th-hue)*.05;x.fillStyle='rgba(5,7,13,.14)';x.fillRect(0,0,W,H);x.fillStyle=`hsl(${hue} 90% 60%)`;x.font='16px monospace';
+y.forEach((v,k)=>{x.fillText(String.fromCharCode(0x30A0+Math.random()*60|0),k*18,v*18);y[k]=v*18>H&&Math.random()>.975?0:v+sp*.5});requestAnimationFrame(dr)})();
+const t0=Date.now();setInterval(()=>{const s=(Date.now()-t0)/1000|0;$('#tc').textContent=[s/3600|0,s/60%60|0,s%60].map(v=>String(v).padStart(2,'0')).join(':')},1000);
+go(0,1);
+</script></body></html>
