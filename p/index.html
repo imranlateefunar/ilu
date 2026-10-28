@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Inside the GTA VI Leak | Cybersecurity Case Study</title>
+<title>Inside the GTA VI Leak | Imran Lateef &amp; Arshad Ali Khokhar</title>
 <!--
 HOW TO EDIT: every slide is one <section class="slide"> ... </section>. Copy, delete or reorder whole sections freely.
  data-p = presenter label | data-t = enter transition (wipe, zoom, flip, glitch) | data-h = background colour (0-360)
@@ -8,11 +8,11 @@ HOW TO EDIT: every slide is one <section class="slide"> ... </section>. Copy, de
  UP / DOWN arrows (or scroll / swipe) change slides.
 -->
 <style>
-:root{--bg:#05070d;--c:#3df2e0;--p:#ff3d81;--y:#ffe14d;--m:#9fb0c8;--d:1}
+:root{--bg:#05070d;--c:#39ff88;--p:#ff3d81;--y:#ffe14d;--m:#9fb0c8;--d:1}
 *{box-sizing:border-box;margin:0}
-html,body{height:100%;overflow:hidden;background:var(--bg);color:#fff;font:clamp(15px,1.5vw,21px)/1.5 ui-sans-serif,system-ui,"Segoe UI",sans-serif}
+html,body{height:100%;overflow:hidden;background:var(--bg);color:#fff;font:clamp(14px,1.4vw,20px)/1.55 ui-monospace,Consolas,"Courier New",monospace}
 #r{position:fixed;inset:0;opacity:.35}
-body:before{content:"";position:fixed;inset:0;z-index:1;pointer-events:none;background:radial-gradient(circle 28vmax at var(--mx,50%) var(--my,50%),#3df2e022,transparent)}
+body:before{content:"";position:fixed;inset:0;z-index:1;pointer-events:none;background:radial-gradient(circle 28vmax at var(--mx,50%) var(--my,50%),#39ff8822,transparent)}
 body:after{content:"";position:fixed;inset:0;z-index:9;pointer-events:none;background:repeating-linear-gradient(0deg,#0000 0 3px,#0003 3px 4px)}
 .shake{animation:sh .5s}@keyframes sh{20%{transform:translate(-12px,6px)}40%{transform:translate(10px,-8px)}60%{transform:translate(-8px,-4px)}80%{transform:translate(6px,6px)}}
 .deck{position:fixed;inset:0;perspective:1400px;z-index:2}
@@ -26,7 +26,7 @@ body:after{content:"";position:fixed;inset:0;z-index:9;pointer-events:none;backg
 @keyframes flip{from{transform:rotateX(calc(var(--d)*-80deg)) translateY(calc(var(--d)*20vh));opacity:0}to{transform:none;opacity:1}}
 @keyframes glt{0%{opacity:0;transform:translateX(-7%) skewX(20deg);filter:hue-rotate(90deg)}30%{opacity:1;transform:translateX(5%) skewX(-12deg)}60%{transform:translateX(-3%);filter:hue-rotate(-60deg)}100%{transform:none;filter:none}}
 @keyframes out{to{transform:translateY(calc(var(--d)*-14vh)) scale(.9) rotateX(calc(var(--d)*25deg));opacity:0;filter:blur(8px)}}
-#gl{position:fixed;inset:0;z-index:8;pointer-events:none;opacity:0;background:repeating-linear-gradient(0deg,#ff3d8190 0 5px,#0000 5px 13px,#3df2e070 13px 17px,#0000 17px 30px)}
+#gl{position:fixed;inset:0;z-index:8;pointer-events:none;opacity:0;background:repeating-linear-gradient(0deg,#ff3d8190 0 5px,#0000 5px 13px,#39ff8870 13px 17px,#0000 17px 30px)}
 #gl.on{animation:gl .5s steps(6)}@keyframes gl{0%{opacity:1;transform:translateX(-3%) skewX(8deg)}50%{opacity:.5;transform:translateX(3%)}100%{opacity:0}}
 .b{opacity:0;transform:translateY(30px);transition:opacity .6s,transform .7s cubic-bezier(.2,.9,.3,1.2)}
 [data-fx=zoom]{transform:scale(.5)}[data-fx=left]{transform:translateX(-70px)}[data-fx=stamp]{transform:scale(3.5) rotate(-20deg)}
@@ -40,7 +40,7 @@ em:before{color:var(--p);transform:translateX(-3px)}em:after{color:var(--y);clip
 @keyframes gj{0%,90%{transform:translateX(0)}92%{transform:translateX(-6px)}96%{transform:translateX(6px)}}
 p,li{color:var(--m)}b{color:#fff}
 .g{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:16px}
-.card{border:1px solid #ffffff1f;background:#0d1422e6;border-radius:6px 22px 6px 22px;padding:20px}
+.card{border:1px solid var(--c);background:#050b08ea;border-radius:4px;padding:34px 18px 18px;position:relative;box-shadow:0 0 18px #39ff8822}.card:before{content:"";position:absolute;left:10px;top:10px;width:9px;height:9px;border-radius:50%;background:#ff5f56;box-shadow:15px 0 #ffbd2e,30px 0 #27c93f}
 .card h3{margin-bottom:6px;font-size:1.1em}.card p{font-size:.85em}
 .num{font-size:clamp(40px,6vw,84px);font-weight:900;color:var(--c);line-height:1;letter-spacing:-.05em}
 .term{font:clamp(14px,1.6vw,22px)/1.6 ui-monospace,Consolas,monospace;color:var(--c);background:#000a;border:1px solid var(--c);padding:16px 20px;white-space:pre-wrap;min-height:6em}
@@ -56,7 +56,7 @@ p,li{color:var(--m)}b{color:#fff}
 .q button:hover{border-color:var(--c)}.q .ok{background:#1d5c3a;border-color:#6dff9c}.q .bad{animation:sh .4s;border-color:var(--p)}
 .win{font-size:clamp(40px,8vw,120px);font-weight:900;letter-spacing:-.05em;line-height:.95;background:linear-gradient(90deg,var(--y),var(--p),var(--c),var(--y));background-size:300%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:bg 4s linear infinite}
 @keyframes bg{to{background-position:300%}}
-a{color:var(--c)}
+a{color:var(--c)}h1,h2{letter-spacing:-.03em}h2:after{content:"_";color:var(--c);animation:bl 1s infinite}.eb{font-size:clamp(12px,1.3vw,17px)}
 #rec{position:fixed;z-index:10;left:3vw;top:3vh;font:700 13px ui-monospace,Consolas,monospace;display:flex;gap:8px;align-items:center}
 #rec:before{content:"";width:12px;height:12px;border-radius:50%;background:red;animation:bl 1s infinite}@keyframes bl{50%{opacity:0}}
 #ui{position:fixed;z-index:10;left:0;right:0;bottom:0;padding:12px 3vw;display:flex;gap:16px;align-items:center;font:12px ui-monospace,Consolas,monospace;color:var(--m)}
@@ -70,127 +70,139 @@ a{color:var(--c)}
 <div id="rec">REC <span id="tc">00:00:00</span></div>
 <main class="deck">
 
-<!-- 1 TITLE -->
-<section class="slide" data-t="glitch" data-h="170" data-p="Both presenters">
-<p class="eb">CYBERSECURITY CASE FILE 路 SEPTEMBER 2022</p>
+<!-- 1 BOOT / TITLE -->
+<section class="slide" data-t="glitch" data-h="140" data-p="Imran + Arshad">
+<p class="eb">root@imran:~$ sudo ./start_case_study</p>
 <h1>INSIDE THE<br><em data-x="GTA VI">GTA VI</em> LEAK</h1>
-<pre class="b term" data-type="> connecting to rockstar_network...|> ACCESS GRANTED|> copying 90 confidential videos_"></pre>
-<p class="b">Presented by <b>[Arshad Ali]</b> &amp; <b>[Member 2]</b></p>
+<pre class="b term" data-type="$ whoami|> imran_lateef + arshad_ali_khokhar|$ ./load --case rockstar_2022|> [OK] evidence loaded. access granted_"></pre>
+<p class="b" style="color:#fff;font-size:1.1em">Presented by <b>IMRAN LATEEF</b> &amp; <b>ARSHAD ALI KHOKHAR</b></p>
 </section>
 
-<!-- 2 WHAT HAPPENED -->
-<section class="slide" data-t="wipe" data-h="330" data-p="Presenter 1">
-<p class="eb">MISSION 1 路 WHAT HAPPENED?</p>
-<h2>A secret game, leaked online.</h2>
+<!-- 2 INTRO: ATTACK / ATTACKER / ATTACKED -->
+<section class="slide" data-t="wipe" data-h="330" data-p="Imran">
+<p class="eb">root@imran:~$ cat intro.txt</p>
+<h2>3 things to know first</h2>
 <div class="g">
-<div class="card b" data-fx="zoom"><div class="num" data-n="90">0</div><p>videos posted online</p></div>
-<div class="card b" data-fx="zoom"><div class="num" data-n="50">0</div><p>minutes of unfinished gameplay</p></div>
-<div class="card b" data-fx="zoom"><div class="num" data-n="1">0</div><p>day until Rockstar confirmed the break-in</p></div></div>
-<p class="call b">It was an early, unfinished build, not the final game. But it was a real theft of company secrets.</p>
+<div class="card b" data-fx="zoom"><h3>THE ATTACK</h3><p>A hacker broke into Rockstar Games' network, stole secret GTA VI videos and leaked them online in September 2022.</p></div>
+<div class="card b" data-fx="zoom"><h3>THE ATTACKER</h3><p>A teenager from the UK, linked to the hacking group Lapsus$.</p></div>
+<div class="card b" data-fx="zoom"><h3>THE ATTACKED</h3><p>Rockstar Games (owned by Take-Two), the developers who make GTA, and the fans waiting for the game.</p></div></div>
+<p class="call b">In one line: someone got into a company's accounts and took what was never theirs.</p>
 </section>
 
-<!-- 3 TIMELINE + DURATION -->
-<section class="slide" data-t="flip" data-h="50" data-p="Presenter 1">
-<p class="eb">MISSION 2 路 TIMELINE &amp; DURATION</p>
-<h2>From break-in to courtroom.</h2>
-<div class="tl">
-<div class="b"><b>Before 18 Sep 2022</b><p>Intruder gets inside. The exact path was never fully made public.</p></div>
-<div class="b"><b>18 Sep 2022</b><p>Videos appear on a GTA fan forum and spread in hours.</p></div>
-<div class="b"><b>19 Sep 2022</b><p>Rockstar confirms a network intrusion.</p></div>
-<div class="b"><b>2023</b><p>A UK court finds the teenage hacker responsible.</p></div></div>
-<p class="call b">Leak spread: hours. Legal case: about a year. No one has published a minute-by-minute record of the break-in.</p>
+<!-- 3 THE 4-STEP FLOW -->
+<section class="slide" data-t="flip" data-h="50" data-p="Imran">
+<p class="eb">root@imran:~$ ./show_attack_flow</p>
+<h2>Every attack follows 4 steps</h2>
+<div class="g">
+<div class="card b st"><h3>1. Initial Access</h3><p>Phishing or stolen credentials</p><i></i></div>
+<div class="card b st"><h3>2. Exploitation</h3><p>Abuse of a weakness or misconfiguration</p><i></i></div>
+<div class="card b st"><h3>3. Impact</h3><p>Data theft, disruption, or account compromise</p><i></i></div>
+<div class="card b st"><h3>4. Detection &amp; Defense</h3><p>Monitoring, incident response, and prevention</p><i></i></div></div>
+<p class="call b">Next: how each step happened in the GTA VI leak.</p>
 </section>
 
-<!-- 4 INITIAL ACCESS -->
-<section class="slide" data-t="zoom" data-h="200" data-p="Presenter 1">
-<p class="eb">MISSION 3 路 INITIAL ACCESS</p>
-<h2>How did they get in?</h2>
+<!-- 4 STAGE 1: INITIAL ACCESS -->
+<section class="slide" data-t="zoom" data-h="200" data-p="Imran">
+<p class="eb">root@imran:~$ ./stage_1 --initial_access</p>
+<h2>1. How did they get in?</h2>
 <p class="b">Reports point to <b>social engineering</b> and a <b>work chat account</b>. Rockstar has not confirmed the details.</p>
 <div class="chat">
 <div class="msg b" data-fx="left">Hi! IT support here. We're fixing your account.</div>
 <div class="msg b" data-fx="left">Please approve the login request on your phone.</div>
-<div class="msg b" data-fx="left">It's urgent, thanks! 馃檹</div></div>
+<div class="msg b" data-fx="left">It's urgent, thanks!</div></div>
 <p class="call b">Illustration only, not the real messages. Hackers fake urgency so you act before you think.</p>
 </section>
 
-<!-- 5 EXPLOITATION -->
-<section class="slide" data-t="glitch" data-h="300" data-p="Presenter 1">
-<p class="eb">MISSION 4 路 EXPLOITATION</p>
-<h2>The attack, step by step.</h2>
+<!-- 5 STAGE 2: EXPLOITATION -->
+<section class="slide" data-t="glitch" data-h="300" data-p="Imran">
+<p class="eb">root@imran:~$ ./stage_2 --exploitation</p>
+<h2>2. What did they do inside?</h2>
 <div class="g">
-<div class="card b st"><b>1 路 Get in</b><span>Use one person's account to enter.</span><i></i></div>
-<div class="card b st"><b>2 路 Look around</b><span>Find folders with secret game files.</span><i></i></div>
-<div class="card b st"><b>3 路 Copy data</b><span>Download videos. This is called exfiltration.</span><i></i></div>
-<div class="card b st"><b>4 路 Leak and pressure</b><span>Post it publicly and demand attention (or money).</span><i></i></div></div>
+<div class="card b st"><h3>Get in</h3><p>Use one person's account to enter.</p><i></i></div>
+<div class="card b st"><h3>Look around</h3><p>Find folders with secret game files.</p><i></i></div>
+<div class="card b st"><h3>Copy data</h3><p>Download the videos (exfiltration).</p><i></i></div>
+<div class="card b st"><h3>Leak and pressure</h3><p>Post it publicly and seek attention or money.</p><i></i></div></div>
 <p class="call b">A model of the reported events, not a confirmed forensic report.</p>
 </section>
 
-<!-- 6 WHO -->
-<section class="slide" data-t="wipe" data-h="260" data-p="Presenter 2">
-<p class="eb">MISSION 5 路 WHO DID IT?</p>
-<h2>A teenager, not a movie villain.</h2>
-<div class="g">
-<div class="card b"><h3>Arion Kurtaj</h3><p>A teenager from the UK. A court found him responsible for the Rockstar attack in 2023.</p></div>
-<div class="card b"><h3>Lapsus$</h3><p>A young, loud hacking group known for stealing data from big tech companies.</p></div>
-<div class="card b"><h3>"teapotuberhacker"</h3><p>The online name that posted the leak. It also claimed the Uber hack the same week.</p></div></div>
-<p class="call b">Online claims are not proof. Always check what courts and companies confirm.</p>
-</section>
-
-<!-- 7 MOTIVATION -->
-<section class="slide" data-t="zoom" data-h="30" data-p="Presenter 2">
-<p class="eb">MISSION 6 路 MOTIVATION</p>
-<h2>Why hack a video game?</h2>
-<div class="g">
-<div class="card b" data-fx="zoom"><h3>馃捀 Money</h3><p>Stolen data can be used as leverage to demand payment (extortion).</p></div>
-<div class="card b" data-fx="zoom"><h3>馃摚 Fame</h3><p>A famous leak brings worldwide attention to the hacker.</p></div>
-<div class="card b" data-fx="zoom"><h3>馃棟锔?Secrets</h3><p>Unreleased footage and plans are valuable to rivals and fans.</p></div></div>
-<h2 class="b" style="font-size:clamp(22px,3vw,40px)">You don't need a bank to have data worth stealing.</h2>
-</section>
-
-<!-- 8 IMPACT -->
-<section class="slide" data-t="flip" data-h="350" data-sp="3" data-p="Presenter 2">
-<p class="eb">MISSION 7 路 IMPACT</p>
+<!-- 6 STAGE 3: IMPACT AND LOSS -->
+<section class="slide" data-t="flip" data-h="350" data-sp="3" data-p="Arshad">
+<p class="eb">root@arshad:~$ ./stage_3 --impact</p>
 <div class="b stamp" data-fx="stamp">LEAKED</div>
 <div class="g">
-<div class="card b"><h3>馃懇鈥嶐煉?Developers</h3><p>Affected most: years of private work shown before it was ready.</p></div>
-<div class="card b"><h3>馃彚 Rockstar &amp; Take-Two</h3><p>Had to investigate, contain access and remove copies.</p></div>
-<div class="card b"><h3>馃幃 Fans</h3><p>Saw spoilers and unfinished work out of context.</p></div></div>
-<p class="call b">Rockstar said it did not expect long-term delays. The damage was to trust and privacy.</p>
+<div class="card b"><div class="num" data-n="90">0</div><p>videos leaked. Developers lost control of private work.</p></div>
+<div class="card b"><div class="num" data-n="50">0</div><p>minutes of footage. Rockstar had to investigate and remove copies.</p></div>
+<div class="card b"><div class="num" data-n="1">0</div><p>day until Rockstar confirmed the break-in.</p></div></div>
+<p class="call b">Most affected: the developers. Rockstar did not expect long-term delays, and no official total cost was widely reported.</p>
 </section>
 
-<!-- 9 DETECTION AND DEFENCE -->
-<section class="slide" data-t="wipe" data-h="150" data-p="Presenter 2">
-<p class="eb">MISSION 8 路 DETECTION &amp; DEFENCE</p>
-<h2>How to stop the next one.</h2>
+<!-- 7 STAGE 4: DETECTION, RECOVERY, DEFENSE -->
+<section class="slide" data-t="wipe" data-h="150" data-p="Arshad">
+<p class="eb">root@arshad:~$ ./stage_4 --defense</p>
+<h2>4. Detection, recovery, defense</h2>
 <div class="g">
-<div class="card b"><h3>馃攼 Strong MFA</h3><p>Never approve a login you did not start.</p></div>
-<div class="card b"><h3>馃毆 Least access</h3><p>People only see files they need.</p></div>
-<div class="card b"><h3>馃憖 Watch alerts</h3><p>Flag huge or unusual downloads fast.</p></div>
-<div class="card b"><h3>馃帗 Train staff</h3><p>Verify urgent requests on another channel.</p></div></div>
-<p class="call b">Rockstar's response: contain, investigate, remove leaked copies.</p>
+<div class="card b"><h3>Contain + investigate</h3><p>Rockstar cut off access and checked what was taken.</p></div>
+<div class="card b"><h3>Recovery</h3><p>Takedown requests removed leaked copies from platforms.</p></div>
+<div class="card b"><h3>Prevent</h3><p>Strong MFA, least access, never approve a login you did not start.</p></div>
+<div class="card b"><h3>Detect</h3><p>Alert on unusual downloads and train staff to verify urgent requests.</p></div></div>
+<p class="call b">Simple rule: verify, limit access, watch for strange activity, respond fast.</p>
 </section>
 
-<!-- 10 QUIZ -->
-<section class="slide" data-t="glitch" data-h="60" data-p="Both presenters">
-<p class="eb">BONUS MISSION 路 YOUR TURN</p>
+<!-- 8 THE ATTACKER -->
+<section class="slide" data-t="zoom" data-h="260" data-p="Arshad">
+<p class="eb">root@arshad:~$ cat attacker.txt</p>
+<h2>Who did this?</h2>
+<div class="g">
+<div class="card b"><h3>Arion Kurtaj</h3><p>A UK teenager. A court found him responsible for the Rockstar attack in 2023.</p></div>
+<div class="card b"><h3>Lapsus$</h3><p>A young, loud hacking group known for stealing data from big tech companies.</p></div>
+<div class="card b"><h3>"teapotuberhacker"</h3><p>The online name that posted the leak. It also claimed the Uber hack the same week.</p></div></div>
+<p class="call b">Online claims are not proof. Trust what courts and companies confirm.</p>
+</section>
+
+<!-- 9 MOTIVATION -->
+<section class="slide" data-t="wipe" data-h="30" data-p="Arshad">
+<p class="eb">root@arshad:~$ ./why --motive</p>
+<h2>Why hack a video game?</h2>
+<div class="g">
+<div class="card b" data-fx="zoom"><h3>Money</h3><p>Stolen data is leverage to demand payment (extortion).</p></div>
+<div class="card b" data-fx="zoom"><h3>Fame</h3><p>A famous leak brings worldwide attention.</p></div>
+<div class="card b" data-fx="zoom"><h3>Secrets</h3><p>Unreleased footage and plans are valuable to rivals and fans.</p></div></div>
+<p class="call b">You don't need a bank to have data worth stealing.</p>
+</section>
+
+<!-- 10 TIMELINE + DURATION -->
+<section class="slide" data-t="flip" data-h="200" data-p="Arshad">
+<p class="eb">root@arshad:~$ ./timeline --real_time</p>
+<h2>From break-in to courtroom</h2>
+<div class="tl">
+<div class="b"><b>Before 18 Sep 2022</b><p>Intruder gets inside. Exact path never fully public.</p></div>
+<div class="b"><b>18 Sep 2022</b><p>Videos appear on a GTA fan forum and spread in hours.</p></div>
+<div class="b"><b>19 Sep 2022</b><p>Rockstar confirms a network intrusion.</p></div>
+<div class="b"><b>2023</b><p>A UK court finds the teenage hacker responsible.</p></div></div>
+<p class="call b">Leak spread: hours. Legal case: about a year. No minute-by-minute record of the break-in is public.</p>
+</section>
+
+<!-- 11 QUIZ -->
+<section class="slide" data-t="glitch" data-h="60" data-p="Both">
+<p class="eb">root@both:~$ ./quiz --live</p>
 <h2>Would you fall for it?</h2>
 <p>A message from "IT" says: <b>"Approve this login on your phone. It's urgent!"</b> You did not log in. What do you do?</p>
 <div class="b q"><button>A. Approve it fast, it sounds urgent</button><button data-a="1">B. Deny it, then verify with IT on a trusted channel</button><button>C. Forward it to a friend and wait</button><p id="qf"></p></div>
 </section>
 
-<!-- 11 END -->
-<section class="slide" data-t="zoom" data-h="170" data-p="Both presenters">
-<div class="win b" data-fx="zoom">MISSION<br>PASSED</div>
+<!-- 12 END -->
+<section class="slide" data-t="zoom" data-h="140" data-p="Both">
+<div class="win b" data-fx="zoom">CONNECTION<br>CLOSED</div>
 <div class="g">
 <div class="card b"><h3>People are security</h3><p>One account can open the door.</p></div>
 <div class="card b"><h3>Limit access</h3><p>Powerful tools need strong locks.</p></div>
 <div class="card b"><h3>Respond fast</h3><p>Contain, investigate, learn.</p></div></div>
-<p class="b">Thank you! Questions? 路 Sources: <a href="https://www.theguardian.com/games/2022/sep/19/grand-theft-auto-6-leak-who-hacked-rockstar-and-what-was-stolen" target="_blank">The Guardian</a> 路 <a href="https://www.sec.gov/Archives/edgar/data/946581/000162828023002448/ttwo-20221231.htm" target="_blank">Take-Two SEC filing</a></p>
+<p class="b">Thank you! Questions? <b>IMRAN LATEEF</b> &amp; <b>ARSHAD ALI KHOKHAR</b><br>Sources: <a href="https://www.theguardian.com/games/2022/sep/19/grand-theft-auto-6-leak-who-hacked-rockstar-and-what-was-stolen" target="_blank">The Guardian</a> | <a href="https://www.sec.gov/Archives/edgar/data/946581/000162828023002448/ttwo-20221231.htm" target="_blank">Take-Two SEC filing</a></p>
 </section>
 
 </main>
 <div id="dots"></div>
-<div id="ui"><span id="ct">1/11</span><div id="pb"><i></i></div><span id="st"></span><span>鈫戔啌 slides 路 鈫愨啋 animations 路 F fullscreen</span></div>
+<div id="ui"><span id="ct">1/11</span><div id="pb"><i></i></div><span id="st"></span><span>&#x2191;&#x2193; slides &#xB7; &#x2190;&#x2192; animations &#xB7; F fullscreen</span></div>
 <script>
 const $=s=>document.querySelector(s),S=[...document.querySelectorAll('.slide')],B=document.body;
 let i=-1,lock=0,hue=170,th=170,sp=1;
@@ -205,7 +217,7 @@ i=k;n.n=dir<0?n.bs.length:0;n.bs.forEach(b=>{b.classList.toggle('on',dir<0)});n.
 $('#gl').classList.remove('on');void $('#gl').offsetWidth;$('#gl').classList.add('on');th=+n.dataset.h;sp=+n.dataset.sp||1;
 if(dir<0)n.bs.forEach(fx);upd()}
 function step(d){const s=S[i];if(d>0&&s.n<s.bs.length){const b=s.bs[s.n++];b.classList.add('on');fx(b)}else if(d<0&&s.n>0)s.bs[--s.n].classList.remove('on');upd()}
-function upd(){const s=S[i];$('#ct').textContent=(i+1)+'/'+S.length;$('#pb i').style.width=(i+1)/S.length*100+'%';$('#st').textContent='鈼?.repeat(s.n)+'鈼?.repeat(s.bs.length-s.n);[...$('#dots').children].forEach((d,k)=>d.classList.toggle('on',k==i))}
+function upd(){const s=S[i];$('#ct').textContent=(i+1)+'/'+S.length;$('#pb i').style.width=(i+1)/S.length*100+'%';$('#st').textContent='\u25CF'.repeat(s.n)+'\u25CB'.repeat(s.bs.length-s.n);[...$('#dots').children].forEach((d,k)=>d.classList.toggle('on',k==i))}
 addEventListener('keydown',e=>{const k=e.key;if(k=='ArrowDown'||k=='PageDown'){e.preventDefault();go(i+1)}else if(k=='ArrowUp'||k=='PageUp'){e.preventDefault();go(i-1)}else if(k=='ArrowRight'||k==' '){e.preventDefault();step(1)}else if(k=='ArrowLeft'){e.preventDefault();step(-1)}else if(k=='Home')go(0);else if(k=='End')go(S.length-1);else if(k=='f'||k=='F')document.fullscreenElement?document.exitFullscreen():document.documentElement.requestFullscreen()});
 addEventListener('wheel',e=>go(i+(e.deltaY>0?1:-1)),{passive:true});
 let tx,ty;addEventListener('touchstart',e=>{tx=e.touches[0].clientX;ty=e.touches[0].clientY},{passive:true});
