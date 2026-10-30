@@ -1,6 +1,22 @@
 <!DOCTYPE html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>STHP 2027 Mock Test | EduCareerInfo</title>
+<meta name="description" content="EduCareerInfo STHP 2027 online mock test: 100 questions across English, Mathematics and IQ.">
+<link rel="canonical" href="https://imranlateef.me/sthp27/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="EduCareerInfo">
+<meta property="og:title" content="STHP 2027 Online Mock Test | EduCareerInfo">
+<meta property="og:description" content="Practice with 100 questions: English, Mathematics and IQ. 75 minutes.">
+<meta property="og:url" content="https://imranlateef.me/sthp27/">
+<meta property="og:image" content="https://imranlateef.me/sthp27/pic.png">
+<meta property="og:image:secure_url" content="https://imranlateef.me/sthp27/pic.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="STHP 2027 Online Mock Test | EduCareerInfo">
+<meta name="twitter:description" content="100 questions · 75 minutes · English, Mathematics and IQ">
+<meta name="twitter:image" content="https://imranlateef.me/sthp27/pic.png">
+<title>STHP 2027 Online Mock Test | EduCareerInfo</title>
 <style>
 :root{--n:#1b3a6b;--g:#0a7a3d;--y:#d4a62a;--bg:#f4f6fa;--t:#1c2333;--c:#fff;--b:#d8deea}
 @media(prefers-color-scheme:dark){:root{--bg:#10151f;--t:#e8ecf5;--c:#1a2231;--b:#2d3850;--n:#7ba5f5}}
@@ -22,20 +38,37 @@ button.sub{background:var(--g);width:100%;margin-top:10px}.nav{display:flex;gap:
 table{width:100%;border-collapse:collapse;font-size:14px}td,th{padding:6px;border-bottom:1px solid var(--b);text-align:left}tr.me{background:rgba(212,166,42,.28);font-weight:700}
 .rv{padding:8px;border-left:4px solid;margin:6px 0;font-size:14px}.rv.ok{border-color:var(--g)}.rv.no{border-color:#d33}.rv.sk{border-color:var(--y)}.st{font-size:14px;margin-top:8px}
 .hist{display:flex;align-items:flex-end;gap:4px;height:100px}.hist div{flex:1;background:var(--n);border-radius:3px 3px 0 0;min-height:2px}.hist div.me{background:var(--y)}.hl{display:flex;gap:4px;font-size:11px}.hl span{flex:1;text-align:center}
+.drawer-toggle{position:fixed;left:12px;top:78px;z-index:30;box-shadow:0 3px 12px #0003}
+.drawer-backdrop{position:fixed;inset:0;background:#0008;z-index:39;display:none}
+.drawer{position:fixed;z-index:40;left:0;top:0;bottom:0;width:min(340px,88vw);background:var(--c);color:var(--t);box-shadow:8px 0 28px #0003;transform:translateX(-105%);transition:transform .25s ease;padding:16px;overflow:auto}
+.drawer.open{transform:translateX(0)}
+.drawer-backdrop.open{display:block}
+.drawer-head{display:flex;align-items:center;justify-content:space-between;gap:8px;margin:42px 0 14px}
+.drawer .pal{grid-template-columns:repeat(5,1fr)}
+.drawer .pal i{padding:10px 0}
+.drawer-legend{font-size:12px;color:var(--t);margin:12px 0}
+.qhead{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.result-note{padding:12px;border-radius:8px;background:rgba(10,122,61,.10);border-left:4px solid var(--g);margin:12px 0}
+.result-warning{padding:12px;border-radius:8px;background:rgba(212,166,42,.13);border-left:4px solid var(--y);margin:12px 0}
+@media(prefers-reduced-motion:reduce){.drawer{transition:none}}
+
 </style></head><body>
 <header><h1>EduCareerInfo</h1><small>Sindh Talent Hunt Program (STHP) 2027 · Online Mock Test</small></header>
 <main id="m"></main>
 <script>
 /* ===== CONFIG – edit these 4 values before uploading ===== */
 const CFG={
- owner:"YOUR_GITHUB_USERNAME",   // GitHub account that owns the repo
- repo:"YOUR_REPO_NAME",          // repository that hosts sthp27/
- branch:"main",
- path:"sthp27/results.csv",      // file inside the repo
- token:"",                       // fine-grained token (Contents: read & write, this repo only). Empty = results are NOT saved online
- minutes:75,
- testId:"STHP27-M1"              // change for each new mock (keeps leaderboards separate)
+  apiBase:"https://YOUR-CLOUDFLARE-WORKER.workers.dev",
+  minutes:75,
+  testId:"STHP27-M1"
 };
+/*
+TEMPORARY CSV STORAGE:
+The Cloudflare Worker writes anonymized scores to sthp27/results.csv
+through the GitHub Contents API. Keep the GitHub token in the Worker secret
+GITHUB_TOKEN; never place it in this public HTML file.
+The public CSV contains candidate IDs and scores only, not names/emails.
+*/
 /* ========================================================= */
 const PASSAGE="Honey bees live in large groups called colonies. Each colony has one queen, a few hundred drones and thousands of worker bees. The queen's only job is to lay eggs. Workers collect nectar from flowers, turn it into honey, clean the hive and guard it against enemies. When a worker finds a good patch of flowers, she returns to the hive and performs a special 'waggle dance'. The direction and length of the dance tell the other bees where the flowers are. In winter, bees stay inside the hive and eat the honey they stored during summer. Without bees, many plants could not produce fruit, because bees carry pollen from one flower to another.";
 const SEC=[{n:"English",t:[["Reading Comprehension",8],["Synonyms",5],["Antonyms",5],["Prepositions",6],["Error Detection",6],["Use of Verbs",5],["Use of Tenses",5]]},
@@ -59,7 +92,7 @@ The road was *narrow*.|wide|long|rough|short|0
 He is a *generous* man.|kind|rich|selfish|honest|2
 The river is *shallow* here.|clear|deep|cold|dirty|1
 She gave a *vague* answer.|short|false|rude|clear|3
-The task was *simple*.|easy|quick|complicated|boring|2
+The task was *simple*.|easy|quick|complicated|boring|0
 He is good ___ mathematics.|in|at|on|for|1
 She is afraid ___ dogs.|from|by|with|of|3
 We have been waiting ___ you since morning.|at|for|to|on|1
@@ -154,70 +187,141 @@ let U,ans,mark,cur,end,iv,done,rec,ALL=null,tabk=0;
 function reg(){m.innerHTML=`<div class=card><h2>STHP 2027 – Online Mock Test</h2>
 <p>Sukkur IBA University · Sindh Talent Hunt Program pattern<br>Part I English (40) · Part II Mathematics (40) · Part III IQ (20)<br><b>100 marks · ${CFG.minutes} minutes · 1 mark each · no negative marking</b></p>
 <form id=f><label class=f>Full name<input name=name required maxlength=60></label>
-<label class=f>Email<input name=email type=email required maxlength=80></label>
-<label class=f>Age<input name=age type=number min=10 max=60 required></label>
 <label class=f>Gender<select name=gender required><option value="">Select</option><option>Male</option><option>Female</option><option>Other</option></select></label>
 <label class=f>Last qualification<select name=qualification required><option value="">Select</option><option>Matric / SSC</option><option>O-Level</option><option>Intermediate / HSSC</option><option>A-Level</option><option>Other</option></select></label>
-<label class=f>Year of passing<input name=year type=number min=2000 max=2030 required></label>
-<p class=st>Your name and score will appear on the leaderboard. The timer starts when you press Start and the test submits automatically when time is up. Do not refresh or close the page during the test.</p>
-<button class=sub>Start Test</button></form></div>`;
+<p class=st>Your anonymized score (candidate ID and marks only) will be recorded in the public mock-test results file. Your name and email are not written to that file. The timer starts when you press Start and the test submits automatically when time is up. Do not refresh or close the page during the test.</p>
+<p class=st>By continuing, you understand that your candidate ID and scores will be visible in the public results file. Do not enter sensitive personal information.</p>
+<button class=sub>Start Test</button></form><p class=st><button type=button onclick="showRetrieve()">Retrieve a previous result</button></p><div id=retrieveBox></div></div>`;
 $("#f").onsubmit=e=>{e.preventDefault();U=Object.fromEntries(new FormData(e.target));start()}}
 
 function start(){ans=Array(100).fill(-1);mark=[];cur=0;done=0;end=Date.now()+CFG.minutes*60000;iv=setInterval(tick,1000);onbeforeunload=e=>{if(!done){e.preventDefault();return e.returnValue=""}};show()}
 function tick(){const r=Math.max(0,Math.round((end-Date.now())/1000)),e=$("#tm");if(e){e.textContent=String(Math.floor(r/60)).padStart(2,"0")+":"+String(r%60).padStart(2,"0");e.className=r<300?"low":""}if(!r&&!done)fin(1)}
-function go(k){cur=k;show();scrollTo(0,0)}
+function go(k){cur=k;show();toggleDrawer(false);scrollTo(0,0)}
+function toggleDrawer(open){const d=$("#questionDrawer"),b=$("#drawerBackdrop");if(!d||!b)return;d.classList.toggle("open",!!open);b.classList.toggle("open",!!open)}
 function mk(i){mark[i]=!mark[i];show()}
 function show(){const i=cur,q=Q[i],t=T[i];
 m.innerHTML=`<div class=bar><span>${SEC[t.s].n} · ${t.t} · Q${i+1}/100</span><b id=tm></b></div>
-<div class=card>${i<8?`<div class=ps>${esc(PASSAGE)}</div>`:""}<p class=dir>${DIR[t.t]||"Choose the correct answer."}</p><p><b>${i+1}.</b> ${fmt(q.q)}</p>
+<div class=card><div class=qhead><p class=dir>${DIR[t.t]||"Choose the correct answer."}</p><button type=button class=drawer-toggle onclick="toggleDrawer(true)" aria-label="Open question navigation">☰ Questions</button></div>${i<8?`<div class=ps>${esc(PASSAGE)}</div>`:""}<p>${fmt(q.q)}</p>
 ${q.o.map((o,k)=>`<label class="opt${ans[i]==k?" sel":""}"><input type=radio name=o ${ans[i]==k?"checked":""} onchange="ans[${i}]=${k};show()"><span>${L[k]}. ${fmt(o)}</span></label>`).join("")}
 <div class=nav><button onclick="go(${i-1})" ${i?"":"disabled"}>◀ Prev</button><button onclick="mk(${i})">${mark[i]?"Unmark":"Mark"} ★</button><button onclick="go(${i+1})" ${i<99?"":"disabled"}>Next ▶</button></div></div>
-<div class=card><div class=pal>${Q.map((_,k)=>`<i class="${k==cur?"cur ":""}${ans[k]>=0?"ok ":""}${mark[k]?"mk":""}" onclick="go(${k})">${k+1}</i>`).join("")}</div>
-<p class=st>Green = answered · Gold outline = marked for review</p><button class=sub onclick="fin(0)">Submit Test</button></div>`;tick()}
+<div class=card><p class=st>Use the Questions button to open the navigation panel. You can move between all 100 questions at any time.</p><button class=sub onclick="fin(0)">Submit Test</button></div>
+<div id=drawerBackdrop class="drawer-backdrop" onclick="toggleDrawer(false)"></div>
+<aside id=questionDrawer class=drawer aria-label="Question navigation">
+<div class=drawer-head><h3>Question Navigator</h3><button type=button onclick="toggleDrawer(false)" aria-label="Close question navigation">✕</button></div>
+<p class=st>Answered: <b>${ans.filter(a=>a>=0).length}</b> / 100 · Marked: <b>${mark.filter(Boolean).length}</b></p>
+<div class=pal>${Q.map((_,k)=>`<i role=button tabindex=0 aria-label="Go to question ${k+1}" class="${k==cur?"cur ":""}${ans[k]>=0?"ok ":""}${mark[k]?"mk":""}" onclick="go(${k})">${k+1}</i>`).join("")}</div>
+<p class=drawer-legend>Green = answered · Grey = not attempted · Gold outline = marked for review · Blue border = current question</p>
+<button class=sub onclick="toggleDrawer(false)">Close navigation</button>
+</aside>`;tick()}
 
 function fin(auto){const un=ans.filter(a=>a<0).length;if(!auto&&!confirm(un?un+" question(s) unanswered. Submit now?":"Submit your test?"))return;
 done=1;clearInterval(iv);const sc=[0,0,0];ans.forEach((a,i)=>{if(a==Q[i].a)sc[T[i].s]++});const tot=sc[0]+sc[1]+sc[2];
-rec={timestamp:new Date().toISOString(),test:CFG.testId,name:U.name.trim(),email:U.email.trim().toLowerCase(),age:U.age,gender:U.gender,qualification:U.qualification,year:U.year,english:sc[0],math:sc[1],iq:sc[2],total:tot,percent:tot,seconds:Math.min(CFG.minutes*60,Math.round(CFG.minutes*60-(end-Date.now())/1000)),answers:ans.map(a=>a<0?"-":"abcd"[a]).join("")};
+rec={timestamp:new Date().toISOString(),test:CFG.testId,name:U.name.trim(),english:sc[0],math:sc[1],iq:sc[2],total:tot,percent:tot,seconds:Math.min(CFG.minutes*60,Math.round(CFG.minutes*60-(end-Date.now())/1000)),answers:ans.map(a=>a<0?"-":"abcd"[a]).join("")};
 res();save()}
 
-const rowOf=()=>H.split(",").map(k=>cell(rec[k],["name","email","qualification"].includes(k))).join(",");
-async function push(row){if(!CFG.token)return false;const u=`https://api.github.com/repos/${CFG.owner}/${CFG.repo}/contents/${CFG.path}`,h={Authorization:"Bearer "+CFG.token,Accept:"application/vnd.github+json"};
-for(let i=0;i<5;i++){try{let txt=H+"\n",sha;const r=await fetch(u+"?ref="+CFG.branch+"&t="+Date.now(),{headers:h});
-if(r.ok){const j=await r.json();sha=j.sha;txt=decodeURIComponent(escape(atob(j.content.replace(/\n/g,""))));if(!txt.endsWith("\n"))txt+="\n"}else if(r.status!=404)return false;
-const p=await fetch(u,{method:"PUT",headers:h,body:JSON.stringify({message:"Add result",content:btoa(unescape(encodeURIComponent(txt+row+"\n"))),sha,branch:CFG.branch})});
-if(p.ok)return true;if(p.status!=409&&p.status!=422)return false}catch(e){return false}
-await new Promise(r=>setTimeout(r,500+Math.random()*1500))}return false}
-async function save(){const row=rowOf();try{localStorage.setItem("sthp27_"+rec.timestamp,row)}catch(e){}
-const ok=await push(row),st=$("#st");if(st)st.innerHTML=ok?"✅ Your result has been saved.":`⚠️ Result could not be saved online. <button onclick="dl()">Download my result file</button> and send it to the organiser.`;load()}
-function dl(){const a=document.createElement("a");a.href=URL.createObjectURL(new Blob([H+"\n"+rowOf()+"\n"],{type:"text/csv"}));a.download="result_"+rec.name.replace(/\W+/g,"_")+".csv";a.click()}
+async function save(){
+  const st=$("#st");
+  if(st)st.textContent="Recording your anonymized result…";
+  try{
+    const response=await fetch(CFG.apiBase+"/api/results",{
+      method:"POST",
+      headers:{"Content-Type":"application/json"},
+      body:JSON.stringify({
+        testId:CFG.testId,
+        result:{
+          english:rec.english,math:rec.math,iq:rec.iq,total:rec.total,
+          percent:rec.percent,seconds:rec.seconds
+        }
+      })
+    });
+    if(!response.ok)throw new Error("The result service did not accept the submission.");
+    const data=await response.json();
+    if(!data.candidateId)throw new Error("The server did not return a candidate ID.");
+    rec.candidateId=data.candidateId;
+    rec.storageStatus="saved";
+    const idBox=$("#candidateId");
+    if(idBox)idBox.textContent=rec.candidateId;
+    if(st)st.innerHTML='<span class="result-note">Your score has been recorded in the online results file. Keep your candidate ID to retrieve your result later.</span>';
+    ALL=null;
+    await load();
+  }catch(err){
+    rec.storageStatus="failed";
+    if(st)st.innerHTML='<span class="result-warning">Your score has been calculated, but online recording could not be confirmed. The results service must be deployed and connected before results can be stored.</span>';
+    ALL=[rec];
+    tab(tabk);
+  }
+}
 function parse(t){const r=[];let row=[],c="",q=0;for(let i=0;i<t.length;i++){const ch=t[i];if(q){if(ch=='"'){if(t[i+1]=='"'){c+='"';i++}else q=0}else c+=ch}else if(ch=='"')q=1;else if(ch==","){row.push(c);c=""}else if(ch=="\n"||ch=="\r"){if(ch=="\r"&&t[i+1]=="\n")i++;row.push(c);c="";if(row.length>1)r.push(row);row=[]}else c+=ch}
 if(c||row.length){row.push(c);if(row.length>1)r.push(row)}const h=r.shift()||[];return r.map(x=>Object.fromEntries(h.map((k,j)=>[k,x[j]])))}
-async function getAll(){const hd=CFG.token?{Authorization:"Bearer "+CFG.token}:{};
-try{const r=await fetch(`https://api.github.com/repos/${CFG.owner}/${CFG.repo}/contents/${CFG.path}?ref=${CFG.branch}&t=${Date.now()}`,{headers:{...hd,Accept:"application/vnd.github.raw+json"}});if(r.ok)return parse(await r.text())}catch(e){}
-try{const r=await fetch("results.csv?t="+Date.now());if(r.ok)return parse(await r.text())}catch(e){}return[]}
-async function load(){ALL=(await getAll()).filter(r=>r.test==CFG.testId&&r.answers&&r.answers.length==100);if(!ALL.some(r=>r.timestamp==rec.timestamp))ALL.push(rec);tab(tabk)}
-
+async function getAll(){
+  try{
+    const r=await fetch(CFG.apiBase+"/leaderboard?testId="+encodeURIComponent(CFG.testId),{headers:{"Accept":"application/json"}});
+    if(!r.ok)return [];
+    const data=await r.json();
+    return Array.isArray(data.results)?data.results:[];
+  }catch(e){return []}
+}
+async function load(){
+  const rows=await getAll();
+  ALL=rows.filter(r=>r.testId===CFG.testId || r.test===CFG.testId);
+  if(rec && rec.storageStatus==="saved" && !ALL.some(r=>r.resultId===rec.resultId))ALL.push(rec);
+  tab(tabk);
+}
+function showRetrieve(){
+  const box=$("#retrieveBox");if(!box)return;
+  box.innerHTML=`<div class="card"><h3>Retrieve a previous result</h3>
+  <label class=f>Candidate ID<input id=retId maxlength=40 placeholder="Enter your candidate ID"></label>
+  <button type=button class=sub onclick="retrieveResult()">Retrieve result</button>
+  <p class=st id=retStatus></p></div>`;
+}
+async function retrieveResult(){
+  const id=$("#retId")?.value.trim(),status=$("#retStatus");
+  if(!id){if(status)status.textContent="Enter your candidate ID.";return}
+  try{
+    const r=await fetch(CFG.apiBase+"/api/result?candidateId="+encodeURIComponent(id));
+    if(!r.ok)throw new Error();
+    const data=await r.json();
+    if(!data.result)throw new Error();
+    rec={...data.result,name:"Candidate "+data.result.candidateId,answers:null,storageStatus:"saved"};
+    ALL=await getAll();
+    res();
+  }catch(e){if(status)status.textContent="No saved result was found for that candidate ID, or the result service is not available."}
+}
+async function getAll(){
+  try{
+    const r=await fetch(CFG.apiBase+"/api/leaderboard?testId="+encodeURIComponent(CFG.testId));
+    if(!r.ok)return [];
+    const data=await r.json();
+    return Array.isArray(data.results)?data.results:[];
+  }catch(e){return []}
+}
+async function load(){
+  ALL=await getAll();
+  if(rec && rec.storageStatus==="saved" && rec.candidateId && !ALL.some(r=>r.candidateId===rec.candidateId))ALL.push(rec);
+  tab(tabk);
+}
 function res(){m.innerHTML=`<div class=card><h2>Result – ${esc(rec.name)}</h2><div class=big>${rec.total}/100</div>
 <div class=sc><div>English<br><b>${rec.english}/40</b></div><div>Mathematics<br><b>${rec.math}/40</b></div><div>IQ<br><b>${rec.iq}/20</b></div></div>
-<p class=st>Time used: ${mmss(rec.seconds)} · Unanswered: ${rec.answers.split("-").length-1}</p><p class=st id=st>Saving your result…</p></div>
+<p class=st>Time used: ${mmss(rec.seconds)} · Unanswered: ${rec.answers?rec.answers.split("-").length-1:"Not available for retrieved records"}</p><p class=st>Each correct answer earns 1 mark. There is no negative marking.</p><p class=st>Candidate ID: <b id=candidateId>${rec.candidateId||"Being generated…"}</b></p><p class=st id=st>Checking online result storage…</p></div>
 <div class=tabs>${["Review","Analytics","Leaderboard"].map((x,i)=>`<button id=t${i} onclick="tab(${i})">${x}</button>`).join("")}</div><div id=tb></div>`;tab(0)}
 function tab(k){tabk=k;[0,1,2].forEach(i=>{const b=$("#t"+i);if(b)b.classList.toggle("on",i==k)});const e=$("#tb");if(!e)return;e.innerHTML=k==0?rev():ALL?(k==1?ana():lb()):"<div class=card>Loading…</div>"}
 const ao=(i,a)=>a<0?"— (not answered)":L[a]+". "+Q[i].o[a];
-function rev(){const a=rec.answers;return`<div class=card><h3>Answer review</h3>${Q.map((q,i)=>{const c=a[i]=="-"?-1:"abcd".indexOf(a[i]);return`<div class="rv ${c<0?"sk":c==q.a?"ok":"no"}"><b>${i+1}.</b> ${fmt(q.q)}<br>Your answer: ${esc(ao(i,c))}${c==q.a?" ✔":"<br>Correct: "+esc(ao(i,q.a))}</div>`}).join("")}</div>`}
+function rev(){const a=rec.answers;if(!a)return`<div class=card><h3>Answer review</h3><p class=st>Detailed answer review is available immediately after completing the test. The public results file stores anonymized scores only.</p></div>`;return`<div class=card><h3>Answer review</h3><p class=st>Review every question, your selected answer and the correct answer. Green indicates correct, red indicates incorrect, and gold indicates unanswered.</p>${Q.map((q,i)=>{const c=a[i]=="-"?-1:"abcd".indexOf(a[i]);return`<div class="rv ${c<0?"sk":c==q.a?"ok":"no"}"><b>${i+1}.</b> ${fmt(q.q)}<br>Your answer: ${esc(ao(i,c))}${c==q.a?" ✔":"<br>Correct answer: "+esc(ao(i,q.a))}</div>`}).join("")}</div>`}
 const bar=(l,p,x,c)=>`<div class=r><span>${l}</span><div class=b><u class="${c||""}" style="width:${Math.max(0,Math.min(100,p))}%"></u></div><em>${x}</em></div>`;
-function ana(){const R=ALL,n=R.length,av=k=>R.reduce((s,r)=>s+ +r[k],0)/n,tot=R.map(r=>+r.total),rank=1+tot.filter(x=>x>rec.total).length,pc=Math.round(100*tot.filter(x=>x<rec.total).length/n);
-const qp=Q.map(()=>0);R.forEach(r=>[...r.answers].forEach((c,i)=>{if(c=="abcd"[Q[i].a])qp[i]++}));
-const tc={},mi={};T.forEach((t,i)=>{tc[t.t]=tc[t.t]||[0,0];mi[t.t]=mi[t.t]||[0,0];tc[t.t][0]+=qp[i];tc[t.t][1]+=n;mi[t.t][1]++;if(rec.answers[i]=="abcd"[Q[i].a])mi[t.t][0]++});
-const bins=Array(10).fill(0);tot.forEach(x=>bins[Math.min(9,Math.floor(x/10))]++);const mb=Math.max(...bins),my=Math.min(9,Math.floor(rec.total/10));
-const hard=qp.map((c,i)=>[i,c/n]).sort((a,b)=>a[1]-b[1]).slice(0,5);
-return`<div class=card><h3>Overall (${n} participant${n>1?"s":""})</h3><p>Rank <b>#${rank}</b> · Better than <b>${pc}%</b> · Class average <b>${av("total").toFixed(1)}</b> · Highest <b>${Math.max(...tot)}</b></p>
-${[["English","english",40],["Mathematics","math",40],["IQ","iq",20]].map(([l,k,mx])=>bar(l+" (you)",100*rec[k]/mx,rec[k]+"/"+mx)+bar(l+" (avg)",100*av(k)/mx,av(k).toFixed(1)+"/"+mx,"a")).join("")}</div>
-<div class=card><h3>Score distribution</h3><div class=hist>${bins.map((b,i)=>`<div class="${i==my?"me":""}" style="height:${100*b/mb}%" title="${b} student(s)"></div>`).join("")}</div><div class=hl>${bins.map((b,i)=>`<span>${i*10}<br>${b}</span>`).join("")}</div><p class=st>Gold bar = your score band. Numbers under each bar = students in that band.</p></div>
-<div class=card><h3>Topic-wise accuracy</h3>${Object.keys(mi).map(t=>bar(t,100*mi[t][0]/mi[t][1],mi[t][0]+"/"+mi[t][1])+bar("Class",100*tc[t][0]/tc[t][1],Math.round(100*tc[t][0]/tc[t][1])+"%","a")).join("")}<p class=st>Green = you · Gold = class average</p></div>
-<div class=card><h3>Hardest questions</h3>${hard.map(([i,p])=>`<p class=st>Q${i+1} (${T[i].t}) – ${Math.round(100*p)}% answered correctly</p>`).join("")}</div>`}
-function lb(){const S=[...ALL].sort((a,b)=>b.total-a.total||a.seconds-b.seconds),i=S.findIndex(r=>r.timestamp==rec.timestamp&&r.email==rec.email);
-return`<div class=card><h3>🏆 Leaderboard (${S.length} participant${S.length>1?"s":""})</h3><p class=st>Your rank: <b>#${i+1}</b></p><div style="overflow-x:auto"><table><tr><th>#<th>Name<th>Eng<th>Math<th>IQ<th>Total<th>Time</tr>
-${S.slice(0,25).map((r,j)=>`<tr class="${j==i?"me":""}"><td>${j+1}<td>${esc(String(r.name).replace(/^'/,""))}<td>${r.english}<td>${r.math}<td>${r.iq}<td><b>${r.total}</b><td>${mmss(+r.seconds)}</tr>`).join("")}</table></div>
+function ana(){
+  const R=ALL||[rec],n=R.length,av=k=>R.reduce((s,r)=>s+(+r[k]||0),0)/n;
+  const tot=R.map(r=>+r.total||0),rank=1+tot.filter(x=>x>rec.total).length;
+  const pc=Math.round(100*tot.filter(x=>x<rec.total).length/n);
+  const bins=Array(10).fill(0);tot.forEach(x=>bins[Math.min(9,Math.floor(x/10))]++);
+  const mb=Math.max(1,...bins),my=Math.min(9,Math.floor(rec.total/10));
+  return`<div class=card><h3>Overall (${n} recorded participant${n>1?"s":""})</h3><p>Rank <b>#${rank}</b> · Better than <b>${pc}%</b> · Class average <b>${av("total").toFixed(1)}</b> · Highest <b>${Math.max(...tot)}</b></p>
+  ${[["English","english",40],["Mathematics","math",40],["IQ","iq",20]].map(([l,k,mx])=>bar(l+" (you)",100*(+rec[k]||0)/mx,(+rec[k]||0)+"/"+mx)+bar(l+" (average)",100*av(k)/mx,av(k).toFixed(1)+"/"+mx,"a")).join("")}</div>
+  <div class=card><h3>Score distribution</h3><div class=hist>${bins.map((b,i)=>`<div class="${i==my?"me":""}" style="height:${100*b/mb}%" title="${b} participant(s)"></div>`).join("")}</div><div class=hl>${bins.map((b,i)=>`<span>${i*10}<br>${b}</span>`).join("")}</div><p class=st>Gold bar = your score band. Numbers under each bar = participants in that band.</p></div>
+  <div class=card><p class=st>Class analytics are based on anonymized totals and section scores stored in results.csv.</p></div>`;
+}
+function lb(){const S=[...ALL].sort((a,b)=>b.total-a.total||a.seconds-b.seconds),i=S.findIndex(r=>r.candidateId&&r.candidateId===rec.candidateId);
+return`<div class=card><h3>🏆 Leaderboard (${S.length} participant${S.length>1?"s":""})</h3><p class=st>Your rank: <b>#${i+1}</b></p><div style="overflow-x:auto"><table><tr><th>#<th>Candidate ID<th>Eng<th>Math<th>IQ<th>Total<th>Time</tr>
+${S.slice(0,25).map((r,j)=>`<tr class="${j==i?"me":""}"><td>${j+1}<td>${esc(String(r.candidateId||"—"))}<td>${r.english}<td>${r.math}<td>${r.iq}<td><b>${r.total}</b><td>${mmss(+r.seconds)}</tr>`).join("")}</table></div>
 ${i>24?`<p class=st>…you are ranked #${i+1}</p>`:""}<p><button onclick="ALL=null;tab(2);load()">Refresh</button></p></div>`}
 reg();
 </script></body></html>
