@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>STHP 2027 Mock Test | EduCareerInfo</title>
+<style>
+:root{--n:#1b3a6b;--g:#0a7a3d;--y:#d4a62a;--bg:#f4f6fa;--t:#1c2333;--c:#fff;--b:#d8deea}
+@media(prefers-color-scheme:dark){:root{--bg:#10151f;--t:#e8ecf5;--c:#1a2231;--b:#2d3850;--n:#7ba5f5}}
+*{box-sizing:border-box}body{margin:0;font:16px/1.5 system-ui,Segoe UI,Arial,sans-serif;background:var(--bg);color:var(--t)}
+header{background:#1b3a6b;color:#fff;text-align:center;padding:14px;border-bottom:4px solid var(--y)}header h1{margin:0;font-size:20px}header small{opacity:.85}
+main{max-width:820px;margin:0 auto;padding:12px}
+.card{background:var(--c);border:1px solid var(--b);border-radius:10px;padding:16px;margin-bottom:12px}
+h2,h3{margin:.2em 0;color:var(--n)}label.f{display:block;margin:10px 0 2px;font-weight:600;font-size:14px}
+input,select{width:100%;padding:10px;border:1px solid var(--b);border-radius:8px;background:var(--c);color:var(--t);font:inherit}
+button{padding:10px 16px;border:0;border-radius:8px;background:#1b3a6b;color:#fff;font:inherit;cursor:pointer}button:disabled{opacity:.4}
+button.sub{background:var(--g);width:100%;margin-top:10px}.nav{display:flex;gap:8px;justify-content:space-between;margin-top:12px}
+.bar{position:sticky;top:0;z-index:5;display:flex;justify-content:space-between;background:#1b3a6b;color:#fff;padding:10px 14px;border-radius:10px;margin-bottom:12px}#tm{font-variant-numeric:tabular-nums}#tm.low{color:#ff8a8a}
+.ps{background:var(--bg);border-left:4px solid var(--y);padding:10px 12px;margin-bottom:12px;font-size:15px}.dir{color:var(--n);font-size:14px;margin:0 0 8px}
+.opt{display:flex;gap:8px;align-items:flex-start;padding:10px;border:1px solid var(--b);border-radius:8px;margin:6px 0;cursor:pointer}.opt.sel{border-color:var(--g);background:rgba(10,122,61,.14)}.opt input{width:auto;margin-top:5px}
+.pal{display:grid;grid-template-columns:repeat(10,1fr);gap:5px}.pal i{font-style:normal;text-align:center;padding:6px 0;border:1px solid var(--b);border-radius:6px;font-size:13px;cursor:pointer}.pal i.ok{background:var(--g);color:#fff}.pal i.mk{outline:2px solid var(--y)}.pal i.cur{border:2px solid var(--n);font-weight:700}
+.tabs{display:flex;gap:6px;margin-bottom:12px}.tabs button{flex:1;background:var(--c);color:var(--t);border:1px solid var(--b)}.tabs button.on{background:#1b3a6b;color:#fff}
+.big{font-size:42px;font-weight:700;color:var(--g);text-align:center}.sc{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;text-align:center}.sc div{border:1px solid var(--b);border-radius:8px;padding:8px}
+.r{display:grid;grid-template-columns:120px 1fr 80px;gap:8px;align-items:center;margin:5px 0;font-size:14px}.b{background:var(--bg);border-radius:6px;height:14px;overflow:hidden}.b u{display:block;height:100%;background:var(--g)}.b u.a{background:var(--y)}.r em{font-style:normal;text-align:right}
+table{width:100%;border-collapse:collapse;font-size:14px}td,th{padding:6px;border-bottom:1px solid var(--b);text-align:left}tr.me{background:rgba(212,166,42,.28);font-weight:700}
+.rv{padding:8px;border-left:4px solid;margin:6px 0;font-size:14px}.rv.ok{border-color:var(--g)}.rv.no{border-color:#d33}.rv.sk{border-color:var(--y)}.st{font-size:14px;margin-top:8px}
+.hist{display:flex;align-items:flex-end;gap:4px;height:100px}.hist div{flex:1;background:var(--n);border-radius:3px 3px 0 0;min-height:2px}.hist div.me{background:var(--y)}.hl{display:flex;gap:4px;font-size:11px}.hl span{flex:1;text-align:center}
+</style></head><body>
+<header><h1>EduCareerInfo</h1><small>Sindh Talent Hunt Program (STHP) 2027 · Online Mock Test</small></header>
+<main id="m"></main>
+<script>
+/* ===== CONFIG – edit these 4 values before uploading ===== */
+const CFG={
+ owner:"YOUR_GITHUB_USERNAME",   // GitHub account that owns the repo
+ repo:"YOUR_REPO_NAME",          // repository that hosts sthp27/
+ branch:"main",
+ path:"sthp27/results.csv",      // file inside the repo
+ token:"",                       // fine-grained token (Contents: read & write, this repo only). Empty = results are NOT saved online
+ minutes:75,
+ testId:"STHP27-M1"              // change for each new mock (keeps leaderboards separate)
+};
+/* ========================================================= */
+const PASSAGE="Honey bees live in large groups called colonies. Each colony has one queen, a few hundred drones and thousands of worker bees. The queen's only job is to lay eggs. Workers collect nectar from flowers, turn it into honey, clean the hive and guard it against enemies. When a worker finds a good patch of flowers, she returns to the hive and performs a special 'waggle dance'. The direction and length of the dance tell the other bees where the flowers are. In winter, bees stay inside the hive and eat the honey they stored during summer. Without bees, many plants could not produce fruit, because bees carry pollen from one flower to another.";
+const SEC=[{n:"English",t:[["Reading Comprehension",8],["Synonyms",5],["Antonyms",5],["Prepositions",6],["Error Detection",6],["Use of Verbs",5],["Use of Tenses",5]]},
+{n:"Mathematics",t:[["Introduction to Sets",7],["Number System",8],["Algebra",9],["Geometry",8],["Information Handling",8]]},
+{n:"IQ",t:[["Number Series",5],["Analogies",5],["Word Arrangement",5],["Blood Relations",5]]}];
+const DIR={"Reading Comprehension":"Read the passage carefully and answer the questions.","Synonyms":"Choose the word closest in meaning to the highlighted word.","Antonyms":"Choose the word opposite in meaning to the highlighted word.","Prepositions":"Choose the correct preposition for the blank.","Error Detection":"Choose the part of the sentence that has an error.","Use of Verbs":"Choose the correct verb form.","Use of Tenses":"Identify the tense / choose the correct answer.","Number Series":"Find the missing number.","Analogies":"Select the pair that has the same relationship.","Word Arrangement":"Arrange the words in a meaningful order.","Blood Relations":"Answer the relationship question."};
+const Q=`What is the passage mainly about?|How honey bees live and work in colonies|How to make honey at home|The dangers of bee stings|Why flowers are colourful|0
+What is the only job of the queen bee?|Guarding the hive|Collecting nectar|Laying eggs|Performing the dance|2
+How do worker bees tell others where the flowers are?|By buzzing loudly|By a waggle dance|By leaving a scent trail|By carrying pollen|1
+What do bees do in winter?|Migrate to warmer places|Collect nectar from winter flowers|Stay in the hive and eat stored honey|Sleep without eating|2
+Why are bees important for plants?|They eat harmful insects|They water the plants|They enrich the soil|They carry pollen from flower to flower|3
+The word *colony* in the passage means…|A kind of flower|A type of honey|A group living together|A place of danger|2
+Which of these is NOT a job of worker bees?|Collecting nectar|Cleaning the hive|Guarding the hive|Laying eggs|3
+Which statement is TRUE according to the passage?|Drones make honey|A colony has only one queen|Workers are very few|Bees sleep through summer|1
+The news made him *furious*.|calm|angry|sad|tired|1
+She gave a *brief* speech.|long|boring|short|loud|2
+The *ancient* temple attracts many tourists.|old|new|broken|holy|0
+He felt *anxious* before the exam.|bored|proud|sleepy|worried|3
+The soldiers showed great *courage*.|fear|bravery|anger|pride|1
+The road was *narrow*.|wide|long|rough|short|0
+He is a *generous* man.|kind|rich|selfish|honest|2
+The river is *shallow* here.|clear|deep|cold|dirty|1
+She gave a *vague* answer.|short|false|rude|clear|3
+The task was *simple*.|easy|quick|complicated|boring|2
+He is good ___ mathematics.|in|at|on|for|1
+She is afraid ___ dogs.|from|by|with|of|3
+We have been waiting ___ you since morning.|at|for|to|on|1
+He has been absent ___ school for three days.|from|of|in|at|0
+She is married ___ a doctor.|with|by|to|for|2
+He insisted ___ paying the bill.|for|on|at|to|1
+My brother don't like tea or coffee in the morning.|My brother|don't like|tea or coffee|in the morning|1
+The news which he brought were very shocking.|The news|which he brought|were very|shocking|2
+He have finished his work before lunch.|He have|finished|his work|before lunch|0
+I prefer tea than coffee in the morning every day.|I prefer tea|than coffee|in the morning|every day|1
+I look forward to meet you at the airport tomorrow.|I look forward|to meet you|at the airport|tomorrow|1
+The furniture in our house are very old.|The furniture|in our house|are very|old|2
+She ___ to school every day.|go|goes|going|gone|1
+They ___ playing football when it started to rain.|are|is|was|were|3
+I have ___ my homework already.|do|did|done|doing|2
+If he ___ hard, he will pass.|studied|study|studies|studying|2
+The sun ___ in the east.|rise|rose|rising|rises|3
+“He is reading a book.” The tense is…|Present indefinite|Present continuous|Present perfect|Past continuous|1
+“They had finished the work.” The tense is…|Past indefinite|Present perfect|Past perfect|Future perfect|2
+“She will go to Lahore.” The tense is…|Future indefinite|Future continuous|Present indefinite|Future perfect|0
+“We have lived here for ten years.” The tense is…|Present indefinite|Present perfect|Past indefinite|Present continuous|1
+“The boys were playing cricket.” The tense is…|Past indefinite|Past perfect|Present continuous|Past continuous|3
+The cardinality of the power set of {x: x∈N, x≤5} is…|10|25|32|16|2
+Write {2, 4, 6, 8, 10, …} in set builder form.|{x: x is an odd natural number}|{x: x is a prime number}|{x: x is an even natural number}|{x: x is a whole number}|2
+If A = {1, 2, 3, 4} and B = {3, 4, 5, 6}, then A ∩ B = …|{1, 2}|{3, 4}|{5, 6}|{1, 2, 3, 4, 5, 6}|1
+If n(A) = 12, n(B) = 9 and n(A ∩ B) = 4, then n(A ∪ B) = …|25|21|13|17|3
+How many subsets does a set with 3 elements have?|6|8|9|3|1
+If A ⊆ B and B ⊆ A, then…|A = B|A ∩ B = ∅|A is a proper subset of B|A ∪ B is the universal set|0
+If U = {1, 2, 3, …, 10} and A = {2, 4, 6, 8, 10}, then A′ = …|{2, 4, 6}|{1, 2, 3}|{1, 3, 5, 7, 9}|{ }|2
+A number when divided by 7 gives 4 as quotient and 0 as remainder. What is the remainder when the same number is divided by 5?|1|2|3|4|2
+The LCM of two numbers is 180 and their ratio is 4:5. The two numbers are…|40, 50|36, 45|32, 40|28, 35|1
+The HCF of 24 and 36 is…|6|8|12|24|2
+The sum of the first five prime numbers is…|26|28|30|41|1
+The ratio of two numbers is 3:5 and their sum is 64. The larger number is…|24|32|40|36|2
+Rs. 1200 is divided between A and B in the ratio 2:3. B's share is…|Rs. 480|Rs. 720|Rs. 600|Rs. 800|1
+Which of the following numbers is divisible by 9?|4562|4564|4565|4563|3
+25% of 640 is…|160|120|180|200|0
+If 2^x = 32, then x = …|4|5|6|16|1
+Factorise: x^2 − 9|(x − 3)(x − 3)|(x + 3)(x − 3)|(x − 9)(x + 1)|(x + 9)(x − 1)|1
+If a * b = 2a + b, then 3 * 4 = …|7|12|14|10|3
+If x + y = 7 and xy = 12, then x^2 + y^2 = …|19|37|25|49|2
+Solve: 3x − 5 = 16|7|5|6|8|0
+(a + b)^2 = …|a^2 + b^2|a^2 + 2ab + b^2|a^2 − 2ab + b^2|a^2 − b^2|1
+2^3 × 2^2 = …|2^6|4^5|2^5|2^1|2
+If 3x + 2 = x + 10, then x = …|2|3|5|4|3
+The value of 5x^2 when x = −2 is…|20|−20|100|10|0
+What is the slope of the line “y-axis”?|0|1|−1|undefined|3
+Two angles of a triangle are 50° and 60°. The third angle is…|60°|70°|80°|90°|1
+In an isosceles triangle the vertex angle is 40°. Each base angle is…|40°|50°|60°|70°|3
+The sum of the interior angles of a quadrilateral is…|180°|270°|360°|540°|2
+The legs of a right triangle are 6 cm and 8 cm. The hypotenuse is…|9 cm|10 cm|12 cm|14 cm|1
+The area of a rectangle 12 cm long and 5 cm wide is…|60 cm^2|34 cm^2|17 cm^2|30 cm^2|0
+The circumference of a circle of radius 7 cm is (π = 22/7)…|22 cm|44 cm|154 cm|88 cm|1
+The slope of the line joining (1, 2) and (3, 6) is…|4|3|2|1|2
+The average of 4, 6, 8, 10 and 12 is…|10|7|9|8|3
+The average of 4, x and 8 is the same as the average of 4 and 8. The value of x is…|4|8|6|12|2
+The median of 3, 9, 5, 7, 1 is…|3|5|7|9|1
+The mode of 2, 3, 3, 5, 3, 7, 5 is…|2|5|7|3|3
+The range of 12, 5, 20, 8, 15 is…|8|12|15|20|2
+In grouped data, the number of observations in a class is called its…|class limit|class interval|mid-point|frequency|3
+The mean of 5 numbers is 20. If each number is increased by 3, the new mean is…|20|25|23|60|2
+The mid-point of the class interval 20–30 is…|20|25|30|50|1
+3, 6, 12, 24, 48, ___|72|96|84|60|1
+1, 4, 9, 16, 25, ___|30|34|36|49|2
+20, 17, 14, 11, ___|9|8|7|6|1
+2, 3, 5, 8, 12, ___|17|16|15|18|0
+5, 10, 7, 14, 11, ___|8|22|14|19|1
+Hot : Cold :: Day : ___|Sun|Light|Night|Morning|2
+Bird : Nest :: Bee : ___|Honey|Hive|Flower|Wings|1
+Doctor : Hospital :: Teacher : ___|School|Book|Student|Pen|0
+Pen : Write :: Knife : ___|Sharp|Kitchen|Steel|Cut|3
+Tongue : Taste :: Nose : ___|Smell|Face|Breath|Air|0
+Arrange in a meaningful order: 1. Fruit  2. Seed  3. Flower  4. Plant|2, 4, 3, 1|2, 3, 4, 1|4, 2, 3, 1|1, 2, 3, 4|0
+Arrange in a meaningful order: 1. Illness  2. Doctor  3. Recovery  4. Medicine  5. Diagnosis|1, 5, 2, 4, 3|2, 1, 5, 4, 3|1, 2, 5, 4, 3|1, 2, 4, 5, 3|2
+Arrange in a meaningful order: 1. Sentence  2. Word  3. Paragraph  4. Letter  5. Essay|2, 4, 1, 3, 5|4, 2, 3, 1, 5|4, 1, 2, 3, 5|4, 2, 1, 3, 5|3
+Arrange in a meaningful order: 1. Century  2. Day  3. Month  4. Year  5. Hour|5, 2, 3, 4, 1|2, 5, 3, 4, 1|5, 2, 4, 3, 1|1, 4, 3, 2, 5|0
+Arrange in a meaningful order: 1. Wage  2. Job  3. Interview  4. Application  5. Work|3, 4, 2, 5, 1|4, 2, 3, 5, 1|4, 3, 2, 1, 5|4, 3, 2, 5, 1|3
+Pointing to a boy, a woman said, “He is the son of my mother’s only son.” How is the woman related to the boy?|Mother|Sister|Aunt|Grandmother|2
+A is the brother of B. B is the sister of C. C is the son of D. How is D related to A?|Father or mother|Uncle|Grandfather|Brother|0
+Ali’s mother is the sister of Sara’s father. How is Ali related to Sara?|Brother|Cousin|Uncle|Nephew|1
+Pointing to a photograph, Ahmed said, “She is the daughter of my grandfather’s only son.” How is she related to Ahmed?|Mother|Cousin|Aunt|Sister|3
+X is the father of Y. Y is the mother of Z. How is Z related to X?|Son|Nephew|Grandchild|Brother|2`.trim().split("\n").map(l=>{const p=l.split("|");return{q:p[0],o:p.slice(1,5),a:+p[5]}});
+const T=[];SEC.forEach((s,si)=>s.t.forEach(([n,c])=>{for(let i=0;i<c;i++)T.push({s:si,t:n})}));
+const L="ABCD",H="timestamp,test,name,email,age,gender,qualification,year,english,math,iq,total,percent,seconds,answers";
+const $=s=>document.querySelector(s),m=$("#m");
+const esc=s=>String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
+const fmt=s=>esc(s).replace(/\*(.+?)\*/g,"<b><u>$1</u></b>").replace(/\^(\w+)/g,"<sup>$1</sup>");
+const mmss=s=>Math.floor(s/60)+"m "+String(s%60).padStart(2,"0")+"s";
+const cell=(v,g)=>{v=String(v).replace(/[\r\n]+/g," ");if(g&&/^[=+\-@]/.test(v))v="'"+v;return /[",]/.test(v)?'"'+v.replace(/"/g,'""')+'"':v};
+let U,ans,mark,cur,end,iv,done,rec,ALL=null,tabk=0;
+
+function reg(){m.innerHTML=`<div class=card><h2>STHP 2027 – Online Mock Test</h2>
+<p>Sukkur IBA University · Sindh Talent Hunt Program pattern<br>Part I English (40) · Part II Mathematics (40) · Part III IQ (20)<br><b>100 marks · ${CFG.minutes} minutes · 1 mark each · no negative marking</b></p>
+<form id=f><label class=f>Full name<input name=name required maxlength=60></label>
+<label class=f>Email<input name=email type=email required maxlength=80></label>
+<label class=f>Age<input name=age type=number min=10 max=60 required></label>
+<label class=f>Gender<select name=gender required><option value="">Select</option><option>Male</option><option>Female</option><option>Other</option></select></label>
+<label class=f>Last qualification<select name=qualification required><option value="">Select</option><option>Matric / SSC</option><option>O-Level</option><option>Intermediate / HSSC</option><option>A-Level</option><option>Other</option></select></label>
+<label class=f>Year of passing<input name=year type=number min=2000 max=2030 required></label>
+<p class=st>Your name and score will appear on the leaderboard. The timer starts when you press Start and the test submits automatically when time is up. Do not refresh or close the page during the test.</p>
+<button class=sub>Start Test</button></form></div>`;
+$("#f").onsubmit=e=>{e.preventDefault();U=Object.fromEntries(new FormData(e.target));start()}}
+
+function start(){ans=Array(100).fill(-1);mark=[];cur=0;done=0;end=Date.now()+CFG.minutes*60000;iv=setInterval(tick,1000);onbeforeunload=e=>{if(!done){e.preventDefault();return e.returnValue=""}};show()}
+function tick(){const r=Math.max(0,Math.round((end-Date.now())/1000)),e=$("#tm");if(e){e.textContent=String(Math.floor(r/60)).padStart(2,"0")+":"+String(r%60).padStart(2,"0");e.className=r<300?"low":""}if(!r&&!done)fin(1)}
+function go(k){cur=k;show();scrollTo(0,0)}
+function mk(i){mark[i]=!mark[i];show()}
+function show(){const i=cur,q=Q[i],t=T[i];
+m.innerHTML=`<div class=bar><span>${SEC[t.s].n} · ${t.t} · Q${i+1}/100</span><b id=tm></b></div>
+<div class=card>${i<8?`<div class=ps>${esc(PASSAGE)}</div>`:""}<p class=dir>${DIR[t.t]||"Choose the correct answer."}</p><p><b>${i+1}.</b> ${fmt(q.q)}</p>
+${q.o.map((o,k)=>`<label class="opt${ans[i]==k?" sel":""}"><input type=radio name=o ${ans[i]==k?"checked":""} onchange="ans[${i}]=${k};show()"><span>${L[k]}. ${fmt(o)}</span></label>`).join("")}
+<div class=nav><button onclick="go(${i-1})" ${i?"":"disabled"}>◀ Prev</button><button onclick="mk(${i})">${mark[i]?"Unmark":"Mark"} ★</button><button onclick="go(${i+1})" ${i<99?"":"disabled"}>Next ▶</button></div></div>
+<div class=card><div class=pal>${Q.map((_,k)=>`<i class="${k==cur?"cur ":""}${ans[k]>=0?"ok ":""}${mark[k]?"mk":""}" onclick="go(${k})">${k+1}</i>`).join("")}</div>
+<p class=st>Green = answered · Gold outline = marked for review</p><button class=sub onclick="fin(0)">Submit Test</button></div>`;tick()}
+
+function fin(auto){const un=ans.filter(a=>a<0).length;if(!auto&&!confirm(un?un+" question(s) unanswered. Submit now?":"Submit your test?"))return;
+done=1;clearInterval(iv);const sc=[0,0,0];ans.forEach((a,i)=>{if(a==Q[i].a)sc[T[i].s]++});const tot=sc[0]+sc[1]+sc[2];
+rec={timestamp:new Date().toISOString(),test:CFG.testId,name:U.name.trim(),email:U.email.trim().toLowerCase(),age:U.age,gender:U.gender,qualification:U.qualification,year:U.year,english:sc[0],math:sc[1],iq:sc[2],total:tot,percent:tot,seconds:Math.min(CFG.minutes*60,Math.round(CFG.minutes*60-(end-Date.now())/1000)),answers:ans.map(a=>a<0?"-":"abcd"[a]).join("")};
+res();save()}
+
+const rowOf=()=>H.split(",").map(k=>cell(rec[k],["name","email","qualification"].includes(k))).join(",");
+async function push(row){if(!CFG.token)return false;const u=`https://api.github.com/repos/${CFG.owner}/${CFG.repo}/contents/${CFG.path}`,h={Authorization:"Bearer "+CFG.token,Accept:"application/vnd.github+json"};
+for(let i=0;i<5;i++){try{let txt=H+"\n",sha;const r=await fetch(u+"?ref="+CFG.branch+"&t="+Date.now(),{headers:h});
+if(r.ok){const j=await r.json();sha=j.sha;txt=decodeURIComponent(escape(atob(j.content.replace(/\n/g,""))));if(!txt.endsWith("\n"))txt+="\n"}else if(r.status!=404)return false;
+const p=await fetch(u,{method:"PUT",headers:h,body:JSON.stringify({message:"Add result",content:btoa(unescape(encodeURIComponent(txt+row+"\n"))),sha,branch:CFG.branch})});
+if(p.ok)return true;if(p.status!=409&&p.status!=422)return false}catch(e){return false}
+await new Promise(r=>setTimeout(r,500+Math.random()*1500))}return false}
+async function save(){const row=rowOf();try{localStorage.setItem("sthp27_"+rec.timestamp,row)}catch(e){}
+const ok=await push(row),st=$("#st");if(st)st.innerHTML=ok?"✅ Your result has been saved.":`⚠️ Result could not be saved online. <button onclick="dl()">Download my result file</button> and send it to the organiser.`;load()}
+function dl(){const a=document.createElement("a");a.href=URL.createObjectURL(new Blob([H+"\n"+rowOf()+"\n"],{type:"text/csv"}));a.download="result_"+rec.name.replace(/\W+/g,"_")+".csv";a.click()}
+function parse(t){const r=[];let row=[],c="",q=0;for(let i=0;i<t.length;i++){const ch=t[i];if(q){if(ch=='"'){if(t[i+1]=='"'){c+='"';i++}else q=0}else c+=ch}else if(ch=='"')q=1;else if(ch==","){row.push(c);c=""}else if(ch=="\n"||ch=="\r"){if(ch=="\r"&&t[i+1]=="\n")i++;row.push(c);c="";if(row.length>1)r.push(row);row=[]}else c+=ch}
+if(c||row.length){row.push(c);if(row.length>1)r.push(row)}const h=r.shift()||[];return r.map(x=>Object.fromEntries(h.map((k,j)=>[k,x[j]])))}
+async function getAll(){const hd=CFG.token?{Authorization:"Bearer "+CFG.token}:{};
+try{const r=await fetch(`https://api.github.com/repos/${CFG.owner}/${CFG.repo}/contents/${CFG.path}?ref=${CFG.branch}&t=${Date.now()}`,{headers:{...hd,Accept:"application/vnd.github.raw+json"}});if(r.ok)return parse(await r.text())}catch(e){}
+try{const r=await fetch("results.csv?t="+Date.now());if(r.ok)return parse(await r.text())}catch(e){}return[]}
+async function load(){ALL=(await getAll()).filter(r=>r.test==CFG.testId&&r.answers&&r.answers.length==100);if(!ALL.some(r=>r.timestamp==rec.timestamp))ALL.push(rec);tab(tabk)}
+
+function res(){m.innerHTML=`<div class=card><h2>Result – ${esc(rec.name)}</h2><div class=big>${rec.total}/100</div>
+<div class=sc><div>English<br><b>${rec.english}/40</b></div><div>Mathematics<br><b>${rec.math}/40</b></div><div>IQ<br><b>${rec.iq}/20</b></div></div>
+<p class=st>Time used: ${mmss(rec.seconds)} · Unanswered: ${rec.answers.split("-").length-1}</p><p class=st id=st>Saving your result…</p></div>
+<div class=tabs>${["Review","Analytics","Leaderboard"].map((x,i)=>`<button id=t${i} onclick="tab(${i})">${x}</button>`).join("")}</div><div id=tb></div>`;tab(0)}
+function tab(k){tabk=k;[0,1,2].forEach(i=>{const b=$("#t"+i);if(b)b.classList.toggle("on",i==k)});const e=$("#tb");if(!e)return;e.innerHTML=k==0?rev():ALL?(k==1?ana():lb()):"<div class=card>Loading…</div>"}
+const ao=(i,a)=>a<0?"— (not answered)":L[a]+". "+Q[i].o[a];
+function rev(){const a=rec.answers;return`<div class=card><h3>Answer review</h3>${Q.map((q,i)=>{const c=a[i]=="-"?-1:"abcd".indexOf(a[i]);return`<div class="rv ${c<0?"sk":c==q.a?"ok":"no"}"><b>${i+1}.</b> ${fmt(q.q)}<br>Your answer: ${esc(ao(i,c))}${c==q.a?" ✔":"<br>Correct: "+esc(ao(i,q.a))}</div>`}).join("")}</div>`}
+const bar=(l,p,x,c)=>`<div class=r><span>${l}</span><div class=b><u class="${c||""}" style="width:${Math.max(0,Math.min(100,p))}%"></u></div><em>${x}</em></div>`;
+function ana(){const R=ALL,n=R.length,av=k=>R.reduce((s,r)=>s+ +r[k],0)/n,tot=R.map(r=>+r.total),rank=1+tot.filter(x=>x>rec.total).length,pc=Math.round(100*tot.filter(x=>x<rec.total).length/n);
+const qp=Q.map(()=>0);R.forEach(r=>[...r.answers].forEach((c,i)=>{if(c=="abcd"[Q[i].a])qp[i]++}));
+const tc={},mi={};T.forEach((t,i)=>{tc[t.t]=tc[t.t]||[0,0];mi[t.t]=mi[t.t]||[0,0];tc[t.t][0]+=qp[i];tc[t.t][1]+=n;mi[t.t][1]++;if(rec.answers[i]=="abcd"[Q[i].a])mi[t.t][0]++});
+const bins=Array(10).fill(0);tot.forEach(x=>bins[Math.min(9,Math.floor(x/10))]++);const mb=Math.max(...bins),my=Math.min(9,Math.floor(rec.total/10));
+const hard=qp.map((c,i)=>[i,c/n]).sort((a,b)=>a[1]-b[1]).slice(0,5);
+return`<div class=card><h3>Overall (${n} participant${n>1?"s":""})</h3><p>Rank <b>#${rank}</b> · Better than <b>${pc}%</b> · Class average <b>${av("total").toFixed(1)}</b> · Highest <b>${Math.max(...tot)}</b></p>
+${[["English","english",40],["Mathematics","math",40],["IQ","iq",20]].map(([l,k,mx])=>bar(l+" (you)",100*rec[k]/mx,rec[k]+"/"+mx)+bar(l+" (avg)",100*av(k)/mx,av(k).toFixed(1)+"/"+mx,"a")).join("")}</div>
+<div class=card><h3>Score distribution</h3><div class=hist>${bins.map((b,i)=>`<div class="${i==my?"me":""}" style="height:${100*b/mb}%" title="${b} student(s)"></div>`).join("")}</div><div class=hl>${bins.map((b,i)=>`<span>${i*10}<br>${b}</span>`).join("")}</div><p class=st>Gold bar = your score band. Numbers under each bar = students in that band.</p></div>
+<div class=card><h3>Topic-wise accuracy</h3>${Object.keys(mi).map(t=>bar(t,100*mi[t][0]/mi[t][1],mi[t][0]+"/"+mi[t][1])+bar("Class",100*tc[t][0]/tc[t][1],Math.round(100*tc[t][0]/tc[t][1])+"%","a")).join("")}<p class=st>Green = you · Gold = class average</p></div>
+<div class=card><h3>Hardest questions</h3>${hard.map(([i,p])=>`<p class=st>Q${i+1} (${T[i].t}) – ${Math.round(100*p)}% answered correctly</p>`).join("")}</div>`}
+function lb(){const S=[...ALL].sort((a,b)=>b.total-a.total||a.seconds-b.seconds),i=S.findIndex(r=>r.timestamp==rec.timestamp&&r.email==rec.email);
+return`<div class=card><h3>🏆 Leaderboard (${S.length} participant${S.length>1?"s":""})</h3><p class=st>Your rank: <b>#${i+1}</b></p><div style="overflow-x:auto"><table><tr><th>#<th>Name<th>Eng<th>Math<th>IQ<th>Total<th>Time</tr>
+${S.slice(0,25).map((r,j)=>`<tr class="${j==i?"me":""}"><td>${j+1}<td>${esc(String(r.name).replace(/^'/,""))}<td>${r.english}<td>${r.math}<td>${r.iq}<td><b>${r.total}</b><td>${mmss(+r.seconds)}</tr>`).join("")}</table></div>
+${i>24?`<p class=st>…you are ranked #${i+1}</p>`:""}<p><button onclick="ALL=null;tab(2);load()">Refresh</button></p></div>`}
+reg();
+</script></body></html>
